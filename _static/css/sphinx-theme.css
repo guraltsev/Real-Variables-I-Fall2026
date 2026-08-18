@@ -230,6 +230,17 @@ body.layout-notes .bd-article-container {
   padding: 0;
 }
 
+/* Warnings use a strong red treatment to signal attention. */
+.admonition-warning {
+  background-color: #fef2f2;
+  border-color: #dc2626;
+}
+
+.admonition-warning > .admonition-title {
+  background-color: #fee2e2;
+  color: #991b1b;
+}
+
 /* Worked examples use a distinct blue admonition treatment. */
 .admonition-example {
   border-color: #2563eb;
@@ -332,16 +343,17 @@ div.admonition.admonition-corollary > .admonition-title::after {
   width: 1.5rem;
 }
 
-/* Problems use a warm brown admonition treatment. */
+/* Problems use a subdued slate treatment, distinct from propositions. */
 .admonition.admonition-problem,
 div.admonition.admonition-problem {
-  border-color: #92400e;
-  background-color: #fff7ed;
+  border-color: #64748b;
+  background-color: #f1f5f9;
 }
 
 .admonition.admonition-problem > .admonition-title,
 div.admonition.admonition-problem > .admonition-title {
-  background-color: #fed7aa;
+  background-color: #e2e8f0;
+  color: #334155;
 }
 
 .admonition.admonition-problem > .admonition-title::after,
@@ -480,6 +492,18 @@ div.admonition.admonition-proof > .admonition-title::after {
 
 /* Preserve the visual distinction without carrying light-mode pastels into
    dark mode. Each title foreground/background pair exceeds WCAG AA contrast. */
+html[data-theme="dark"] .admonition.admonition-warning,
+html[data-theme="dark"] div.admonition.admonition-warning {
+  background-color: #2c1015;
+  border-color: #f87171;
+}
+
+html[data-theme="dark"] .admonition.admonition-warning > .admonition-title,
+html[data-theme="dark"] div.admonition.admonition-warning > .admonition-title {
+  background-color: #7f1d1d;
+  color: #fef2f2;
+}
+
 html[data-theme="dark"] .admonition.admonition-example,
 html[data-theme="dark"] div.admonition.admonition-example {
   background-color: #172554;
@@ -530,14 +554,14 @@ html[data-theme="dark"] div.admonition.admonition-corollary > .admonition-title 
 
 html[data-theme="dark"] .admonition.admonition-problem,
 html[data-theme="dark"] div.admonition.admonition-problem {
-  background-color: #2b1a0e;
-  border-color: #fdba74;
+  background-color: #1e293b;
+  border-color: #93a4b8;
 }
 
 html[data-theme="dark"] .admonition.admonition-problem > .admonition-title,
 html[data-theme="dark"] div.admonition.admonition-problem > .admonition-title {
-  background-color: #6b3b17;
-  color: #ffedd5;
+  background-color: #334155;
+  color: #e2e8f0;
 }
 
 html[data-theme="dark"] .admonition.admonition-challenge-problem,
