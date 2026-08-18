@@ -246,10 +246,85 @@ div.admonition.admonition-example > .admonition-title::after {
   box-sizing: border-box;
   content: "";
   display: block;
-  background-image: url("../assets/customer-explain-give-svgrepo-com.svg");
+  background-image: url("../assets/example-explanation.svg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: 1.5rem 1.5rem;
+  height: 1.5rem;
+  left: 0.2rem;
+  margin: 0;
+  top: 0.25rem;
+  width: 1.5rem;
+}
+
+/* Propositions use a warm brown treatment. */
+.admonition.admonition-proposition,
+div.admonition.admonition-proposition {
+  background-color: #fff7ed;
+  border-color: #92400e;
+}
+
+.admonition.admonition-proposition > .admonition-title,
+div.admonition.admonition-proposition > .admonition-title {
+  background-color: #fed7aa;
+  color: #78350f;
+}
+
+.admonition.admonition-proposition > .admonition-title::after,
+div.admonition.admonition-proposition > .admonition-title::after {
+  background: url("../assets/proposition-math-board.svg") center / contain no-repeat;
+  content: "";
+  display: block;
+  height: 1.5rem;
+  left: 0.2rem;
+  margin: 0;
+  top: 0.25rem;
+  width: 1.5rem;
+}
+
+/* Lemmas use a warm yellow treatment. */
+.admonition.admonition-lemma,
+div.admonition.admonition-lemma {
+  background-color: #fffbeb;
+  border-color: #d97706;
+}
+
+.admonition.admonition-lemma > .admonition-title,
+div.admonition.admonition-lemma > .admonition-title {
+  background-color: #fef3c7;
+  color: #92400e;
+}
+
+.admonition.admonition-lemma > .admonition-title::after,
+div.admonition.admonition-lemma > .admonition-title::after {
+  background: url("../assets/lemma-pencil-ruler.svg") center / contain no-repeat;
+  content: "";
+  display: block;
+  height: 1.5rem;
+  left: 0.2rem;
+  margin: 0;
+  top: 0.25rem;
+  width: 1.5rem;
+}
+
+/* Corollaries use a blue-violet treatment, close to examples but more purple. */
+.admonition.admonition-corollary,
+div.admonition.admonition-corollary {
+  background-color: #eef2ff;
+  border-color: #6366f1;
+}
+
+.admonition.admonition-corollary > .admonition-title,
+div.admonition.admonition-corollary > .admonition-title {
+  background-color: #e0e7ff;
+  color: #3730a3;
+}
+
+.admonition.admonition-corollary > .admonition-title::after,
+div.admonition.admonition-corollary > .admonition-title::after {
+  background: url("../assets/corollary-cogs.svg") center / contain no-repeat;
+  content: "";
+  display: block;
   height: 1.5rem;
   left: 0.2rem;
   margin: 0;
@@ -272,7 +347,7 @@ div.admonition.admonition-problem > .admonition-title {
 .admonition.admonition-problem > .admonition-title::after,
 div.admonition.admonition-problem > .admonition-title::after {
   box-sizing: border-box;
-  background: url("../assets/query-what-how-why-icon.svg") center / contain no-repeat;
+  background: url("../assets/problem-question.svg") center / contain no-repeat;
   content: "";
   display: block;
   height: 1.5rem;
@@ -299,7 +374,7 @@ div.admonition.admonition-challenge-problem > .admonition-title {
 .admonition.admonition-challenge-problem > .admonition-title::after,
 div.admonition.admonition-challenge-problem > .admonition-title::after {
   box-sizing: border-box;
-  background: url("../assets/query-what-how-why-icon.svg") center / contain no-repeat;
+  background: url("../assets/problem-question.svg") center / contain no-repeat;
   content: "";
   display: block;
   height: 1.5rem;
@@ -311,7 +386,7 @@ div.admonition.admonition-challenge-problem > .admonition-title::after {
 
 .admonition.admonition-challenge-problem > .admonition-title::before,
 div.admonition.admonition-challenge-problem > .admonition-title::before {
-  background: url("../assets/exclamation-mark-svgrepo-com.svg") center / contain no-repeat;
+  background: url("../assets/challenge-warning.svg") center / contain no-repeat;
   content: "";
   display: block;
   height: 1.25rem;
@@ -344,7 +419,7 @@ div.admonition.admonition-rule > .admonition-title {
 div.admonition.admonition-theorem > .admonition-title::after,
 .admonition.admonition-rule > .admonition-title::after,
 div.admonition.admonition-rule > .admonition-title::after {
-  background: url("../assets/chemistry-flask-with-liquid-inside-svgrepo-com.svg") center / contain no-repeat;
+  background: url("../assets/theorem-flask.svg") center / contain no-repeat;
   content: "";
   display: block;
   height: 1.5rem;
@@ -369,7 +444,7 @@ div.admonition.admonition-definition > .admonition-title {
 
 .admonition.admonition-definition > .admonition-title::after,
 div.admonition.admonition-definition > .admonition-title::after {
-  background: url("../assets/mind-icon.svg") center / contain no-repeat;
+  background: url("../assets/definition-mind.svg") center / contain no-repeat;
   content: "";
   display: block;
   height: 1.5rem;
@@ -381,19 +456,19 @@ div.admonition.admonition-definition > .admonition-title::after {
 
 .admonition.admonition-proof,
 div.admonition.admonition-proof {
-  background-color: #ecfdf5;
-  border-color: #047857;
+  background-color: #f9fafb;
+  border-color: #9ca3af;
 }
 
 .admonition.admonition-proof > .admonition-title,
 div.admonition.admonition-proof > .admonition-title {
-  background-color: #a7f3d0;
-  color: #065f46;
+  background-color: #f3f4f6;
+  color: #374151;
 }
 
 .admonition.admonition-proof > .admonition-title::after,
 div.admonition.admonition-proof > .admonition-title::after {
-  background: url("../assets/science-experiment-svgrepo-com.svg") center / contain no-repeat;
+  background: url("../assets/proof-experiment.svg") center / contain no-repeat;
   content: "";
   display: block;
   height: 1.5rem;
@@ -415,6 +490,42 @@ html[data-theme="dark"] .admonition.admonition-example > .admonition-title,
 html[data-theme="dark"] div.admonition.admonition-example > .admonition-title {
   background-color: #1e3a8a;
   color: #eff6ff;
+}
+
+html[data-theme="dark"] .admonition.admonition-proposition,
+html[data-theme="dark"] div.admonition.admonition-proposition {
+  background-color: #2b1a0e;
+  border-color: #fdba74;
+}
+
+html[data-theme="dark"] .admonition.admonition-proposition > .admonition-title,
+html[data-theme="dark"] div.admonition.admonition-proposition > .admonition-title {
+  background-color: #6b3b17;
+  color: #ffedd5;
+}
+
+html[data-theme="dark"] .admonition.admonition-lemma,
+html[data-theme="dark"] div.admonition.admonition-lemma {
+  background-color: #2b2110;
+  border-color: #fbbf24;
+}
+
+html[data-theme="dark"] .admonition.admonition-lemma > .admonition-title,
+html[data-theme="dark"] div.admonition.admonition-lemma > .admonition-title {
+  background-color: #78350f;
+  color: #fffbeb;
+}
+
+html[data-theme="dark"] .admonition.admonition-corollary,
+html[data-theme="dark"] div.admonition.admonition-corollary {
+  background-color: #1e1b4b;
+  border-color: #a5b4fc;
+}
+
+html[data-theme="dark"] .admonition.admonition-corollary > .admonition-title,
+html[data-theme="dark"] div.admonition.admonition-corollary > .admonition-title {
+  background-color: #4338ca;
+  color: #eef2ff;
 }
 
 html[data-theme="dark"] .admonition.admonition-problem,
@@ -471,19 +582,25 @@ html[data-theme="dark"] div.admonition.admonition-definition > .admonition-title
 
 html[data-theme="dark"] .admonition.admonition-proof,
 html[data-theme="dark"] div.admonition.admonition-proof {
-  background-color: #102a20;
-  border-color: #6ee7b7;
+  background-color: #252a33;
+  border-color: #9ca3af;
 }
 
 html[data-theme="dark"] .admonition.admonition-proof > .admonition-title,
 html[data-theme="dark"] div.admonition.admonition-proof > .admonition-title {
-  background-color: #065f46;
-  color: #ecfdf5;
+  background-color: #3f4651;
+  color: #f9fafb;
 }
 
-/* Both custom title icons are black SVGs; make them legible on dark headers. */
+/* Custom title icons are black SVGs; make them legible on dark headers. */
 html[data-theme="dark"] .admonition.admonition-example > .admonition-title::after,
 html[data-theme="dark"] div.admonition.admonition-example > .admonition-title::after,
+html[data-theme="dark"] .admonition.admonition-proposition > .admonition-title::after,
+html[data-theme="dark"] div.admonition.admonition-proposition > .admonition-title::after,
+html[data-theme="dark"] .admonition.admonition-lemma > .admonition-title::after,
+html[data-theme="dark"] div.admonition.admonition-lemma > .admonition-title::after,
+html[data-theme="dark"] .admonition.admonition-corollary > .admonition-title::after,
+html[data-theme="dark"] div.admonition.admonition-corollary > .admonition-title::after,
 html[data-theme="dark"] .admonition.admonition-problem > .admonition-title::after,
 html[data-theme="dark"] div.admonition.admonition-problem > .admonition-title::after {
   filter: invert(1);
