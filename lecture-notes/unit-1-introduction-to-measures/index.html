@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>I. Introduction to measures &#8212; REAL VARIABLES I - Fall 2026</title>
+    <title>I. Introduction to measures &#8212; REAL VARIABLES I — Fall 2026</title>
   
   
   
@@ -47,7 +47,7 @@
     <script src="../../_static/sphinx_highlight.js?v=6ffebe34"></script>
     <script defer="defer" src="../../_static/@popperjs/core/popper.min.js?v=a8c9358f"></script>
     <script defer="defer" src="../../_static/tippy.js/tippy.umd.min.js?v=4126cd26"></script>
-    <script defer="defer" src="../../_static/tippy\lecture-notes\unit-1-introduction-to-measures\index.2b9aff98-fa07-4e62-8662-a8fac6bd2d18.js"></script>
+    <script defer="defer" src="../../_static/tippy\lecture-notes\unit-1-introduction-to-measures\index.40d72b7a-6204-47bc-9ada-72ef10e70ec0.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'lecture-notes/unit-1-introduction-to-measures/index';</script>
     <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
     <script src="../../_static/js/course-sidebar-toggle.js?v=57cfeca2"></script>
@@ -58,18 +58,32 @@
     <link rel="icon" href="../../_static/uark-favicon.png"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Review of Riemann Integration" href="01-review-of-riemann-integration.html" />
+    <link rel="next" title="1. Review of Riemann Integration" href="01-review-of-riemann-integration.html" />
     <link rel="prev" title="Lecture Notes" href="../index.html" />
+  
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
-    <meta name="docbuild:last-update" content="August 18, 2026"/>
+    <meta name="docbuild:last-update" content="August 19, 2026"/>
   
     
     <script src="../../_static/searchtools.js"></script>
     <script src="../../_static/language_data.js"></script>
     <script src="../../searchindex.js"></script>
   
+  <script>
+    // JupyterLite registers a service worker at the origin root. If it was
+    // previously run on the usual local preview port, that worker can control
+    // this unrelated Sphinx site and reject page requests after a rebuild.
+    // Published course sites are unaffected; only loopback previews clear
+    // service-worker registrations.
+    if (location.hostname === "127.0.0.1" || location.hostname === "localhost") {
+      navigator.serviceWorker?.getRegistrations()
+        .then((registrations) => Promise.all(registrations.map((registration) => registration.unregister())))
+        .catch(() => {});
+    }
+  </script>
+
   </head>
   <body data-default-mode="" class="layout-notes">
 
@@ -137,7 +151,7 @@
   
   
   
-    <p class="title logo__title">REAL VARIABLES I - Fall 2026</p>
+    <p class="title logo__title">REAL VARIABLES I — Fall 2026</p>
   
 </a></div>
     
@@ -340,7 +354,8 @@
   </p>
   <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
 <li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">I. Introduction to measures</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="01-review-of-riemann-integration.html">I.1 Review of Riemann integrations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="01-review-of-riemann-integration.html">1. Review of Riemann Integration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="02-Cardinality-countability-and-non-negative-sums.html">2. Cardinality, countability, and non-negative sums</a></li>
 </ul>
 </details></li>
 </ul>
@@ -426,7 +441,7 @@
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Review of Riemann Integration</p>
+        <p class="prev-next-title">1. Review of Riemann Integration</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>

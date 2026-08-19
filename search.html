@@ -6,7 +6,7 @@
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><title>Search - REAL VARIABLES I - Fall 2026</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><title>Search - REAL VARIABLES I — Fall 2026</title>
   
   
   
@@ -58,13 +58,27 @@
     <link rel="icon" href="_static/uark-favicon.png"/>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="#" />
+  
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
-    <meta name="docbuild:last-update" content="August 18, 2026"/>
+    <meta name="docbuild:last-update" content="August 19, 2026"/>
   
     
   
+  <script>
+    // JupyterLite registers a service worker at the origin root. If it was
+    // previously run on the usual local preview port, that worker can control
+    // this unrelated Sphinx site and reject page requests after a rebuild.
+    // Published course sites are unaffected; only loopback previews clear
+    // service-worker registrations.
+    if (location.hostname === "127.0.0.1" || location.hostname === "localhost") {
+      navigator.serviceWorker?.getRegistrations()
+        .then((registrations) => Promise.all(registrations.map((registration) => registration.unregister())))
+        .catch(() => {});
+    }
+  </script>
+
   </head>
   <body data-default-mode="">
 
@@ -132,7 +146,7 @@
   
   
   
-    <p class="title logo__title">REAL VARIABLES I - Fall 2026</p>
+    <p class="title logo__title">REAL VARIABLES I — Fall 2026</p>
   
 </a></div>
     

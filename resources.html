@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Resources &#8212; REAL VARIABLES I - Fall 2026</title>
+    <title>Resources &#8212; REAL VARIABLES I — Fall 2026</title>
   
   
   
@@ -47,7 +47,7 @@
     <script src="_static/sphinx_highlight.js?v=6ffebe34"></script>
     <script defer="defer" src="_static/@popperjs/core/popper.min.js?v=a8c9358f"></script>
     <script defer="defer" src="_static/tippy.js/tippy.umd.min.js?v=4126cd26"></script>
-    <script defer="defer" src="_static/tippy\resources.5d78fda4-4dc3-45e1-9848-0ef8d6b09e4e.js"></script>
+    <script defer="defer" src="_static/tippy\resources.f545b235-21ae-46b6-a0c7-48d6ce9a68ac.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'resources';</script>
     <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
     <script src="_static/js/course-sidebar-toggle.js?v=57cfeca2"></script>
@@ -60,16 +60,30 @@
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Lecture Notes" href="lecture-notes/index.html" />
     <link rel="prev" title="Assignments" href="assignments/index.html" />
+  
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
-    <meta name="docbuild:last-update" content="August 18, 2026"/>
+    <meta name="docbuild:last-update" content="August 19, 2026"/>
   
     
     <script src="_static/searchtools.js"></script>
     <script src="_static/language_data.js"></script>
     <script src="searchindex.js"></script>
   
+  <script>
+    // JupyterLite registers a service worker at the origin root. If it was
+    // previously run on the usual local preview port, that worker can control
+    // this unrelated Sphinx site and reject page requests after a rebuild.
+    // Published course sites are unaffected; only loopback previews clear
+    // service-worker registrations.
+    if (location.hostname === "127.0.0.1" || location.hostname === "localhost") {
+      navigator.serviceWorker?.getRegistrations()
+        .then((registrations) => Promise.all(registrations.map((registration) => registration.unregister())))
+        .catch(() => {});
+    }
+  </script>
+
   </head>
   <body data-default-mode="" class="layout-info">
 
@@ -137,7 +151,7 @@
   
   
   
-    <p class="title logo__title">REAL VARIABLES I - Fall 2026</p>
+    <p class="title logo__title">REAL VARIABLES I — Fall 2026</p>
   
 </a></div>
     
