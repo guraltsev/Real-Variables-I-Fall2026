@@ -369,12 +369,15 @@ body.layout-notes .bd-article-container {
 }
 
 /* MathJax 4 injects a .7em vertical display margin after this stylesheet has
-   loaded.  Override it at the actual output node, rather than compensating
-   with a second host margin, so prerendered SVG and browser MathJax agree. */
+   loaded.  Use one modest, deliberate gap at the actual output node instead,
+   so prerendered SVG and browser MathJax agree without paragraph-derived
+   whitespace above a formula. */
+.math[data-math-display="block"] > .math-svg,
+.math.display-math-interrupt > .math-svg,
 .math[data-math-display="block"] > mjx-container[display],
 .math.display-math-interrupt > mjx-container[display] {
   display: block;
-  margin: 0 !important;
+  margin: 0.35rem 0 !important;
   padding: 0;
 }
 
