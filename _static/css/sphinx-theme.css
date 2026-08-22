@@ -1,45 +1,183 @@
 /*
  * Course presentation for PyData Sphinx Theme.
- * Layout hooks come exclusively from YAML frontmatter via sphinx_course.py.
+ * Layout hooks come exclusively from YAML frontmatter via course_roles.py.
  */
 
 :root {
-  --uark-razorback-red: #9d2235;
-  --uark-apple-blossom: #ffffff;
-  --uark-quartz: #f2f2f4;
-  --uark-silverleaf: #c7c8c9;
-  --uark-spoofers-stone: #464648;
-  --uark-buckskin: #ddba96;
-  --uark-bauxite: #492d14;
-  --uark-clearsky: #9dc9d5;
-  --uark-springwater: #3e94aa;
-  --uark-storm-cloud: #0f3842;
+  --brand-primary: #9d2235;
+  --brand-white: #ffffff;
+  --brand-light: #f2f2f4;
+  --brand-silver: #c7c8c9;
+  --brand-dark: #464648;
+  --brand-tan: #ddba96;
+  --brand-brown: #492d14;
+  --brand-sky: #9dc9d5;
+  --brand-blue: #3e94aa;
+  --brand-navy: #0f3842;
 
   /* Reclaim space from the right-hand Contents sidebar. */
   --pst-sidebar-secondary: 13rem;
 }
 
 html[data-theme="light"] {
-  --pst-color-primary: var(--uark-razorback-red);
-  --pst-color-link: var(--uark-razorback-red);
-  --pst-color-link-hover: var(--uark-bauxite);
-  --pst-color-accent: var(--uark-bauxite);
+  --pst-color-primary: var(--brand-primary);
+  --pst-color-link: var(--brand-primary);
+  --pst-color-link-hover: var(--brand-brown);
+  --pst-color-accent: var(--brand-brown);
 }
 
 html[data-theme="dark"] {
-  --pst-color-primary: var(--uark-buckskin);
-  --pst-color-link: var(--uark-buckskin);
-  --pst-color-link-hover: var(--uark-clearsky);
-  --pst-color-accent: var(--uark-clearsky);
+  --pst-color-primary: var(--brand-tan);
+  --pst-color-link: var(--brand-tan);
+  --pst-color-link-hover: var(--brand-sky);
+  --pst-color-accent: var(--brand-sky);
 }
 
 :focus-visible {
-  outline: 3px solid var(--uark-springwater);
+  outline: 3px solid var(--brand-blue);
   outline-offset: 3px;
 }
 
+/* Local source navigation is present only in edit-preview HTML. */
+.course-edit-page-tools { display: flex; justify-content: flex-end; min-height: 0; }
+.course-edit-target-wrapper { position: relative; }
+.course-edit-control {
+  display: inline-grid;
+  place-items: center;
+  width: 2.25rem;
+  height: 2.25rem;
+  padding: .45rem;
+  margin-inline: .2rem;
+  border: 1px solid transparent;
+  border-radius: .25rem;
+  color: var(--pst-color-link);
+  background: transparent;
+  vertical-align: middle;
+  opacity: 0;
+  cursor: pointer;
+}
+.course-edit-control img { width: 1.1rem; height: 1.1rem; opacity: .78; }
+.course-edit-control:hover,
+.course-edit-control:focus-visible,
+*:hover > .course-edit-control,
+*:focus-within > .course-edit-control { opacity: 1; }
+.course-edit-control:hover { background: color-mix(in srgb, currentColor 10%, transparent); }
+.course-edit-control:focus-visible { opacity: 1; outline: 3px solid var(--brand-blue); outline-offset: 2px; }
+.course-edit-target-wrapper > .course-edit-control,
+.course-edit-target-wrapper > * > .course-edit-control { position: absolute; top: .15rem; right: .15rem; z-index: 1; }
+.course-edit-status { position: fixed; inset: auto 1rem 1rem auto; z-index: 30; max-width: min(24rem, calc(100vw - 2rem)); }
+@media (max-width: 42rem), (pointer: coarse) {
+  .course-edit-control { opacity: 1; }
+  .course-edit-page-tools { min-height: 2.75rem; }
+}
+@media print {
+  .course-edit-control, .course-edit-page-tools, .course-edit-status { display: none !important; }
+}
+
+/* Focus mode keeps the measured header node, but removes its visual and
+   keyboard footprint. The bootstrap class prevents a cold-load banner flash. */
+html.course-focus-requested #pst-header,
+html.course-focused #pst-header {
+  --course-active-header-height: 0px;
+  height: 0;
+  min-height: 0;
+  overflow: visible;
+  background: transparent;
+}
+
+/* Establish the final geometry during the head bootstrap, before the
+   controller runs. This prevents sticky sidebars from first using the full
+   header measurement and then jumping upward. */
+html.course-focus-requested,
+html.course-focused {
+  --course-active-header-height: 0px;
+  --pst-header-height: 0px;
+}
+
+html.course-focused #pst-header > *:not(.sidebar-toggle),
+html.course-focus-requested #pst-header > *:not(.sidebar-toggle) {
+  visibility: hidden;
+  pointer-events: none;
+}
+
+html.course-focused .course-focused-section-utilities { display: flex; }
+html.course-focus-requested .sidebar-header-items,
+html.course-focused .sidebar-header-items { display: none; }
+.course-focused-section-utilities {
+  display: none;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 0.25rem;
+  min-height: 2.75rem;
+  padding: 0.15rem 0.35rem;
+}
+
+.bd-links__title { display: flex; align-items: center; gap: 0.35rem; }
+.course-focus-button {
+  display: inline-grid;
+  place-items: center;
+  min-width: 2.75rem;
+  min-height: 2.75rem;
+  padding: 0.3rem;
+  color: var(--pst-color-link);
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: 0.25rem;
+  font: inherit;
+  font-size: 0.75rem;
+  line-height: 1.15;
+}
+.course-focus-button:hover { background: var(--pst-color-surface); border-color: var(--pst-color-border); }
+html.course-focused .course-focus-button {
+  background: color-mix(in srgb, var(--pst-color-surface) 88%, var(--pst-color-primary));
+  border-color: color-mix(in srgb, var(--pst-color-border) 70%, var(--pst-color-primary));
+  box-shadow: inset 0 2px 3px rgb(0 0 0 / 0.14), inset 0 0 0 1px rgb(255 255 255 / 0.08);
+}
+html[data-theme="dark"].course-focused .course-focus-button {
+  background: color-mix(in srgb, var(--pst-color-surface) 82%, var(--pst-color-primary));
+  box-shadow: inset 0 2px 3px rgb(0 0 0 / 0.28), inset 0 0 0 1px rgb(255 255 255 / 0.06);
+}
+.course-focus-icon {
+  width: 1.1rem;
+  height: 1.1rem;
+  display: inline-block;
+  background: url("../assets/focus-mode-goal.svg") center / contain no-repeat;
+  filter: brightness(0) saturate(100%) invert(19%) sepia(31%) saturate(2200%) hue-rotate(320deg);
+}
+html[data-theme="dark"] .course-focus-icon { filter: invert(79%) sepia(28%) saturate(500%); }
+
+html.course-focus-requested .bd-container__inner > .bd-sidebar-primary,
+html.course-focus-requested .bd-container__inner > .bd-sidebar-secondary,
+html.course-focus-requested .course-edge-sidebar-toggle,
+html.course-focused .bd-container__inner > .bd-sidebar-primary,
+html.course-focused .bd-container__inner > .bd-sidebar-secondary,
+html.course-focused .course-edge-sidebar-toggle {
+  top: calc(var(--course-active-header-height, 0px) + 1rem);
+}
+
+@media (max-width: 959.98px) {
+  html.course-focused #pst-header > .bd-header__inner > .sidebar-toggle {
+    visibility: visible;
+    pointer-events: auto;
+    position: fixed;
+    top: calc(0.35rem + env(safe-area-inset-top));
+    z-index: 20;
+  }
+  html.course-focused #pst-header > .bd-header__inner > .primary-toggle { left: 0.35rem; }
+  html.course-focused #pst-header > .bd-header__inner > .secondary-toggle { right: 0.35rem; }
+}
+
+@media print {
+  html.course-focused .course-focus-button,
+  html.course-focused .course-focused-section-utilities { display: none !important; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html.course-focused * { scroll-behavior: auto !important; transition-duration: 0.01ms !important; }
+}
+
 html[data-theme="dark"] :focus-visible {
-  outline-color: var(--uark-buckskin);
+  outline-color: var(--brand-tan);
 }
 
 /* Let wide notes use the viewport instead of the theme's global page cap. */
@@ -91,9 +229,9 @@ body.layout-notes .bd-article-container {
   .bd-container__inner > .bd-sidebar-primary {
     grid-column: 1;
     grid-row: 1;
-    max-height: calc(100vh - var(--pst-header-height) - 1rem);
+    max-height: calc(100vh - var(--course-active-header-height, var(--pst-header-height)) - 1rem);
     position: sticky;
-    top: calc(var(--pst-header-height) + 1rem);
+    top: calc(var(--course-active-header-height, var(--pst-header-height)) + 1rem);
     width: auto;
     transition: opacity 120ms ease-out;
   }
@@ -106,9 +244,9 @@ body.layout-notes .bd-article-container {
   .bd-container__inner > .bd-sidebar-secondary {
     grid-column: 3;
     grid-row: 1;
-    max-height: calc(100vh - var(--pst-header-height) - 1rem);
+    max-height: calc(100vh - var(--course-active-header-height, var(--pst-header-height)) - 1rem);
     position: sticky;
-    top: calc(var(--pst-header-height) + 1rem);
+    top: calc(var(--course-active-header-height, var(--pst-header-height)) + 1rem);
     transition: opacity 120ms ease-out;
   }
 
@@ -134,7 +272,7 @@ body.layout-notes .bd-article-container {
     margin-right: 0;
     padding: 0;
     position: sticky;
-    top: calc(var(--pst-header-height) + 1rem);
+    top: calc(var(--course-active-header-height, var(--pst-header-height)) + 1rem);
     width: 1em;
     z-index: 2;
   }
@@ -218,17 +356,77 @@ body.layout-notes .bd-article-container {
   visibility: visible;
 }
 
-/* Display math can interrupt prose without introducing a new paragraph. */
-.math.display-math-interrupt {
+/* Display math can interrupt prose without introducing a new paragraph.
+   MyST can also put an otherwise standalone display in a paragraph when it
+   lacks blank source lines.  Keep the display box itself marginless in every
+   rendering stage; paragraph/block layout owns any intended separation. */
+.math.display-math-interrupt,
+.math-fallback[data-math-display="block"],
+.math-enhanced[data-math-display="block"] {
   display: block;
   margin: 0;
-}
-
-/* MathJax otherwise supplies a 1em display margin of its own. */
-.math.display-math-interrupt > mjx-container[display="true"] {
-  margin: 0.35rem 0;
   padding: 0;
 }
+
+/* MathJax 4 injects a .7em vertical display margin after this stylesheet has
+   loaded.  Override it at the actual output node, rather than compensating
+   with a second host margin, so prerendered SVG and browser MathJax agree. */
+.math[data-math-display="block"] > mjx-container[display],
+.math.display-math-interrupt > mjx-container[display] {
+  display: block;
+  margin: 0 !important;
+  padding: 0;
+}
+
+/* Semantic-LaTeX inline emphasis. Colors match xcolor's named palette. */
+.semantic-underline { text-decoration: underline; }
+.semantic-strikethrough { text-decoration: line-through; }
+.semantic-boxed { border: 1px solid currentColor; border-radius: 0.15rem; padding: 0 0.2em; }
+.semantic-colored.semantic-color-black { color: black; }
+.semantic-colored.semantic-color-blue { color: blue; }
+.semantic-colored.semantic-color-brown { color: brown; }
+.semantic-colored.semantic-color-cyan { color: cyan; }
+.semantic-colored.semantic-color-darkgray { color: darkgray; }
+.semantic-colored.semantic-color-gray { color: gray; }
+.semantic-colored.semantic-color-green { color: green; }
+.semantic-colored.semantic-color-lightgray { color: lightgray; }
+.semantic-colored.semantic-color-lime { color: lime; }
+.semantic-colored.semantic-color-magenta { color: magenta; }
+.semantic-colored.semantic-color-olive { color: olive; }
+.semantic-colored.semantic-color-orange { color: orange; }
+.semantic-colored.semantic-color-pink { color: pink; }
+.semantic-colored.semantic-color-purple { color: purple; }
+.semantic-colored.semantic-color-red { color: red; }
+.semantic-colored.semantic-color-teal { color: teal; }
+.semantic-colored.semantic-color-violet { color: violet; }
+.semantic-colored.semantic-color-white { color: white; }
+.semantic-colored.semantic-color-yellow { color: yellow; }
+.semantic-colorboxed { border-radius: 0.15rem; padding: 0 0.2em; }
+.semantic-colorboxed.semantic-color-black { background-color: black; color: white; }
+.semantic-colorboxed.semantic-color-blue { background-color: blue; color: white; }
+.semantic-colorboxed.semantic-color-brown { background-color: brown; color: white; }
+.semantic-colorboxed.semantic-color-cyan { background-color: cyan; }
+.semantic-colorboxed.semantic-color-darkgray { background-color: darkgray; color: white; }
+.semantic-colorboxed.semantic-color-gray { background-color: gray; color: white; }
+.semantic-colorboxed.semantic-color-green { background-color: green; color: white; }
+.semantic-colorboxed.semantic-color-lightgray { background-color: lightgray; }
+.semantic-colorboxed.semantic-color-lime { background-color: lime; }
+.semantic-colorboxed.semantic-color-magenta { background-color: magenta; color: white; }
+.semantic-colorboxed.semantic-color-olive { background-color: olive; color: white; }
+.semantic-colorboxed.semantic-color-orange { background-color: orange; }
+.semantic-colorboxed.semantic-color-pink { background-color: pink; }
+.semantic-colorboxed.semantic-color-purple { background-color: purple; color: white; }
+.semantic-colorboxed.semantic-color-red { background-color: red; color: white; }
+.semantic-colorboxed.semantic-color-teal { background-color: teal; color: white; }
+.semantic-colorboxed.semantic-color-violet { background-color: violet; color: white; }
+.semantic-colorboxed.semantic-color-white { background-color: white; }
+.semantic-colorboxed.semantic-color-yellow { background-color: yellow; }
+
+/* Remarks distinguish explanatory context from numbered results. */
+.admonition.admonition-remark,
+div.admonition.admonition-remark { background-color: #f8fafc; border-color: #64748b; }
+.admonition.admonition-remark > .admonition-title,
+div.admonition.admonition-remark > .admonition-title { background-color: #e2e8f0; color: #334155; }
 
 /* Warnings use a strong red treatment to signal attention. */
 .admonition-warning,
@@ -736,16 +934,6 @@ div.math {
   text-align: center;
 }
 
-/* MathJax typesets here before the SVG-to-SVG swap. Visibility (rather than
-   display:none) gives MathJax real layout metrics without disturbing the page. */
-.math-enhancement-staging {
-  position: absolute;
-  top: 0;
-  left: -100000px;
-  visibility: hidden;
-  pointer-events: none;
-}
-
 /* The portable single-page build searches its embedded page templates rather
    than relying on Sphinx's multi-file search index. */
 .single-page-search-dialog {
@@ -885,42 +1073,46 @@ div.math {
   }
 }
 
-/* UArk utility classes remain available to semantic MyST containers. */
-.uark-bg-razorback-red { background: var(--uark-razorback-red); color: var(--uark-apple-blossom); }
-.uark-bg-quartz { background: var(--uark-quartz); color: var(--uark-spoofers-stone); }
-.uark-bg-spoofers-stone { background: var(--uark-spoofers-stone); color: var(--uark-apple-blossom); }
-.uark-bg-buckskin { background: var(--uark-buckskin); color: var(--uark-bauxite); }
-.uark-bg-storm-cloud { background: var(--uark-storm-cloud); color: var(--uark-apple-blossom); }
-.uark-text-razorback-red { color: var(--uark-razorback-red); }
-.uark-text-bauxite { color: var(--uark-bauxite); }
-.uark-text-storm-cloud { color: var(--uark-storm-cloud); }
-.uark-border-razorback-red { border-color: var(--uark-razorback-red); }
-.uark-border-silverleaf { border-color: var(--uark-silverleaf); }
+/* General utility classes remain available to semantic MyST containers. */
+.site-bg-primary { background: var(--brand-primary); color: var(--brand-white); }
+.site-bg-light { background: var(--brand-light); color: var(--brand-dark); }
+.site-bg-dark { background: var(--brand-dark); color: var(--brand-white); }
+.site-bg-tan { background: var(--brand-tan); color: var(--brand-brown); }
+.site-bg-navy { background: var(--brand-navy); color: var(--brand-white); }
+.site-text-primary { color: var(--brand-primary); }
+.site-text-brown { color: var(--brand-brown); }
+.site-text-navy { color: var(--brand-navy); }
+.site-border-primary { border-color: var(--brand-primary); }
+.site-border-silver { border-color: var(--brand-silver); }
 
-.uark-surface {
+.site-surface {
   padding: 1rem 1.25rem;
-  color: var(--uark-spoofers-stone);
-  background: var(--uark-quartz);
-  border: 1px solid var(--uark-silverleaf);
+  color: var(--brand-dark);
+  background: var(--brand-light);
+  border: 1px solid var(--brand-silver);
   border-radius: 0.25rem;
 }
 
-.uark-surface > :first-child { margin-top: 0; }
-.uark-surface > :last-child { margin-bottom: 0; }
+.site-surface > :first-child { margin-top: 0; }
+.site-surface > :last-child { margin-bottom: 0; }
 
-html[data-theme="dark"] .uark-surface {
-  color: var(--uark-quartz);
-  background: var(--uark-storm-cloud);
-  border-color: var(--uark-clearsky);
+html[data-theme="dark"] .site-surface {
+  color: var(--brand-light);
+  background: var(--brand-navy);
+  border-color: var(--brand-sky);
 }
 
 /* Public lecture entries that are not yet settled remain visible but distinct. */
+.semantic-line-break {
+  display: block;
+}
+
 .lecture-log-tentative {
   display: inline-block;
   margin-left: 0.35rem;
   padding: 0.05rem 0.35rem;
-  color: var(--uark-bauxite);
-  background: var(--uark-buckskin);
+  color: var(--brand-brown);
+  background: var(--brand-tan);
   border-radius: 999px;
   font-size: 0.78em;
   font-weight: 700;
@@ -929,8 +1121,8 @@ html[data-theme="dark"] .uark-surface {
 }
 
 html[data-theme="dark"] .lecture-log-tentative {
-  color: var(--uark-storm-cloud);
-  background: var(--uark-clearsky);
+  color: var(--brand-navy);
+  background: var(--brand-sky);
 }
 
 .grade-weights-chart { display: grid; grid-template-columns: minmax(11rem, 16rem) minmax(15rem, 1fr); gap: 1.25rem; align-items: center; max-width: 46rem; margin: 1.25rem auto; }
