@@ -33,6 +33,19 @@ html[data-theme="dark"] {
   --pst-color-accent: var(--brand-sky);
 }
 
+/* Keep the PDF marker beside the current breadcrumb title, at roughly the
+   title's cap height without changing the breadcrumb's line spacing. */
+.bd-breadcrumbs .course-breadcrumb-pdf-link {
+  display: inline-block;
+  margin-left: 0.32em;
+}
+
+.bd-breadcrumbs .course-breadcrumb-pdf-icon {
+  width: 1.15em;
+  height: 1.15em;
+  vertical-align: -0.16em;
+}
+
 :focus-visible {
   outline: 3px solid var(--brand-blue);
   outline-offset: 3px;
