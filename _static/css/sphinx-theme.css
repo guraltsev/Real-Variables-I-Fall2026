@@ -38,42 +38,6 @@ html[data-theme="dark"] {
   outline-offset: 3px;
 }
 
-/* Local source navigation is present only in edit-preview HTML. */
-.course-edit-page-tools { display: flex; justify-content: flex-end; min-height: 0; }
-.course-edit-target-wrapper { position: relative; }
-.course-edit-control {
-  display: inline-grid;
-  place-items: center;
-  width: 2.25rem;
-  height: 2.25rem;
-  padding: .45rem;
-  margin-inline: .2rem;
-  border: 1px solid transparent;
-  border-radius: .25rem;
-  color: var(--pst-color-link);
-  background: transparent;
-  vertical-align: middle;
-  opacity: 0;
-  cursor: pointer;
-}
-.course-edit-control img { width: 1.1rem; height: 1.1rem; opacity: .78; }
-.course-edit-control:hover,
-.course-edit-control:focus-visible,
-*:hover > .course-edit-control,
-*:focus-within > .course-edit-control { opacity: 1; }
-.course-edit-control:hover { background: color-mix(in srgb, currentColor 10%, transparent); }
-.course-edit-control:focus-visible { opacity: 1; outline: 3px solid var(--brand-blue); outline-offset: 2px; }
-.course-edit-target-wrapper > .course-edit-control,
-.course-edit-target-wrapper > * > .course-edit-control { position: absolute; top: .15rem; right: .15rem; z-index: 1; }
-.course-edit-status { position: fixed; inset: auto 1rem 1rem auto; z-index: 30; max-width: min(24rem, calc(100vw - 2rem)); }
-@media (max-width: 42rem), (pointer: coarse) {
-  .course-edit-control { opacity: 1; }
-  .course-edit-page-tools { min-height: 2.75rem; }
-}
-@media print {
-  .course-edit-control, .course-edit-page-tools, .course-edit-status { display: none !important; }
-}
-
 /* Focus mode keeps the measured header node, but removes its visual and
    keyboard footprint. The bootstrap class prevents a cold-load banner flash. */
 html.course-focus-requested #pst-header,
@@ -178,6 +142,104 @@ html.course-focused .course-edge-sidebar-toggle {
 
 html[data-theme="dark"] :focus-visible {
   outline-color: var(--brand-tan);
+}
+
+/* Keep the desktop header to one row.  JavaScript moves only the links that
+   do not fit into this disclosure menu, preserving Search and other header
+   controls in their intended row. */
+@media (min-width: 960px) {
+  html.course-navbar-overflow-ready .bd-header .navbar-header-items {
+    min-width: 0;
+    flex-wrap: nowrap;
+  }
+
+  html.course-navbar-overflow-ready .bd-header .navbar-header-items__center,
+  html.course-navbar-overflow-ready .bd-header .navbar-header-items__center > .navbar-item,
+  html.course-navbar-overflow-ready #pst-header .course-navbar-nav {
+    min-width: 0;
+  }
+
+  /* Keep the header navigation's flex track as wide as the header permits.
+     Otherwise it can retain the narrow width it had after links moved into
+     the overflow menu, even after the viewport grows. */
+  html.course-navbar-overflow-ready .bd-header .navbar-header-items__center,
+  html.course-navbar-overflow-ready .bd-header .navbar-header-items__center > .navbar-item,
+  html.course-navbar-overflow-ready #pst-header .course-navbar-nav {
+    flex: 1 1 auto;
+  }
+
+  html.course-navbar-overflow-ready #pst-header .course-navbar-nav {
+    display: flex;
+    align-items: center;
+  }
+
+  html.course-navbar-overflow-ready #pst-header .course-navbar-nav > .navbar-nav {
+    /* Size to the displayed links.  It may shrink to make room for the
+       disclosure button, but must not grow and push that button to the far
+       edge of the header. */
+    flex: 0 1 auto;
+    flex-wrap: nowrap;
+    min-width: 0;
+    overflow: hidden;
+  }
+
+  html.course-navbar-overflow-ready #pst-header .course-navbar-nav .nav-link { white-space: nowrap; }
+
+  html.course-navbar-overflow-ready #pst-header .course-navbar-overflow {
+    position: relative;
+    flex: 0 0 auto;
+    margin-left: 0.25rem;
+  }
+
+  html.course-navbar-overflow-ready #pst-header .course-navbar-overflow__toggle {
+    display: inline-grid;
+    place-items: center;
+    width: 2rem;
+    height: 2rem;
+    padding: 0;
+    color: var(--pst-color-text-muted);
+    background: transparent;
+    border: 0;
+    border-radius: 0.25rem;
+    font: inherit;
+    font-size: 1.15rem;
+    line-height: 1;
+  }
+
+  html.course-navbar-overflow-ready #pst-header .course-navbar-overflow__toggle:hover,
+  html.course-navbar-overflow-ready #pst-header .course-navbar-overflow__toggle:focus-visible {
+    color: var(--pst-color-link);
+    background: var(--pst-color-surface);
+  }
+
+  html.course-navbar-overflow-ready #pst-header .course-navbar-overflow__menu {
+    position: absolute;
+    z-index: 20;
+    top: calc(100% + 0.35rem);
+    right: 0;
+    min-width: 14rem;
+    max-width: min(24rem, calc(100vw - 2rem));
+    padding: 0.35rem 0;
+    margin: 0;
+    overflow-wrap: anywhere;
+    list-style: none;
+    background: var(--pst-color-on-background);
+    border: 1px solid var(--pst-color-border);
+    border-radius: 0.3rem;
+    box-shadow: 0 0.2rem 0.5rem var(--pst-color-shadow);
+  }
+
+  html.course-navbar-overflow-ready #pst-header .course-navbar-overflow__menu > .nav-item { margin: 0; }
+
+  html.course-navbar-overflow-ready #pst-header .course-navbar-overflow__menu > .nav-item > .nav-link {
+    display: block;
+    padding: 0.45rem 1rem;
+  }
+
+  html.course-navbar-overflow-ready #pst-header .course-navbar-overflow__menu > .nav-item > .nav-link:hover,
+  html.course-navbar-overflow-ready #pst-header .course-navbar-overflow__menu > .nav-item > .nav-link:focus-visible {
+    background: var(--pst-color-surface);
+  }
 }
 
 /* Let wide notes use the viewport instead of the theme's global page cap. */
@@ -348,6 +410,12 @@ body.layout-notes .bd-article-container {
 
 .bd-article p:not(.admonition-title) + p:not(.admonition-title) {
   margin-top: 0.85rem;
+}
+
+/* Homework problem names are secondary to their numbered markers. */
+.homework-problem-name {
+  font-size: 0.9em;
+  font-weight: 400;
 }
 
 /* Callout anchors follow the section-heading convention: reveal on hover. */
@@ -570,6 +638,31 @@ div.admonition.admonition-problem > .admonition-title::after {
   margin: 0;
   top: 0.25rem;
   width: 1.5rem;
+}
+
+/* Homework hints are intentionally visible, but quieter than warnings. */
+.admonition.admonition-homework-hint,
+div.admonition.admonition-homework-hint {
+  border-color: #a16207;
+  background-color: #fefce8;
+}
+
+.admonition.admonition-homework-hint > .admonition-title,
+div.admonition.admonition-homework-hint > .admonition-title {
+  background-color: #fef3c7;
+  color: #713f12;
+}
+
+html[data-theme="dark"] .admonition.admonition-homework-hint,
+html[data-theme="dark"] div.admonition.admonition-homework-hint {
+  border-color: #facc15;
+  background-color: #422006;
+}
+
+html[data-theme="dark"] .admonition.admonition-homework-hint > .admonition-title,
+html[data-theme="dark"] div.admonition.admonition-homework-hint > .admonition-title {
+  background-color: #713f12;
+  color: #fef3c7;
 }
 
 /* Challenge problems retain the problem icon and add an urgency marker. */
@@ -907,6 +1000,63 @@ html[data-theme="dark"] div.admonition.admonition-proof > .admonition-title::aft
   display: none;
 }
 
+/* On-this-page navigation is fully expanded by default.  The display menu
+   offers concise alternatives without interfering with the theme's scroll spy,
+   which continues to mark the current heading as active. */
+.course-page-toc-heading {
+  align-items: center;
+  display: flex;
+  gap: 0.3rem;
+  justify-content: flex-start;
+}
+
+.course-page-toc-heading .onthispage {
+  margin: 0;
+}
+
+.course-page-toc-display-menu .dropdown-toggle {
+  border: 0;
+  color: var(--pst-color-text-muted);
+  font-size: var(--pst-sidebar-font-size);
+  line-height: 1;
+  padding: 0.2rem 0.35rem;
+}
+
+.course-page-toc-display-menu .dropdown-toggle:hover,
+.course-page-toc-display-menu .dropdown-toggle:focus-visible {
+  background: var(--pst-color-surface);
+  color: var(--pst-color-link);
+}
+
+.course-page-toc-display-menu .dropdown-item.active,
+.course-page-toc-display-menu .dropdown-item:active {
+  background: var(--pst-color-primary);
+  color: var(--pst-color-primary-text);
+}
+
+#pst-page-toc-nav[data-course-page-toc-mode="expanded"] ul ul {
+  display: block;
+}
+
+#pst-page-toc-nav[data-course-page-toc-mode="top-level"] ul ul {
+  display: none;
+}
+
+#pst-page-toc-nav[data-course-page-toc-mode="top-level"] > ul > .toc-entry:has(.active, [aria-current="true"]) > .nav-link {
+  background-color: transparent;
+  box-shadow: inset max(3px, 0.1875rem, 0.12em) 0 0 var(--pst-color-primary);
+  color: var(--pst-color-primary);
+  font-weight: 600;
+}
+
+#pst-page-toc-nav[data-course-page-toc-mode="current"] ul ul {
+  display: none;
+}
+
+#pst-page-toc-nav[data-course-page-toc-mode="current"] .toc-entry:has(.active) > ul {
+  display: block;
+}
+
 /* Keep wide mathematics scrollable without widening the whole document. */
 .math-display,
 div.math {
@@ -1110,6 +1260,35 @@ html[data-theme="dark"] .site-surface {
   display: block;
 }
 
+.homework-part-weight {
+  font-size: 0.7em;
+}
+
+/* Keep a homework part's label and opening text together. */
+section[id^="homework-problem-"][id*="-part-"] > h3,
+section[id^="homework-problem-"][id*="-part-"] > h3 + p {
+  display: inline;
+}
+
+.semantic-hwinstructions {
+  background: #f1f1f1;
+  border-radius: 0.25rem;
+  margin: 1rem 0;
+  padding: 1rem 1.25rem;
+}
+
+.semantic-hwinstructions > :first-child {
+  margin-top: 0;
+}
+
+.semantic-hwinstructions > :last-child {
+  margin-bottom: 0;
+}
+
+.hwinstructions-title {
+  font-weight: 700;
+}
+
 .lecture-log-tentative {
   display: inline-block;
   margin-left: 0.35rem;
@@ -1126,6 +1305,24 @@ html[data-theme="dark"] .site-surface {
 html[data-theme="dark"] .lecture-log-tentative {
   color: var(--brand-navy);
   background: var(--brand-sky);
+}
+
+.lecture-log-inclass {
+  display: inline-block;
+  margin-left: 0.35rem;
+  padding: 0.05rem 0.35rem;
+  color: #174e63;
+  background: #cdebf2;
+  border-radius: 999px;
+  font-size: 0.78em;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+html[data-theme="dark"] .lecture-log-inclass {
+  color: #d9f5fb;
+  background: #24596a;
 }
 
 .grade-weights-chart { display: grid; grid-template-columns: minmax(11rem, 16rem) minmax(15rem, 1fr); gap: 1.25rem; align-items: center; max-width: 46rem; margin: 1.25rem auto; }

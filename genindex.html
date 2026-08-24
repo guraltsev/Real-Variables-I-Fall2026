@@ -27,18 +27,16 @@
   
   <!-- Loaded before other Sphinx assets -->
   <link href="_static/styles/theme.css?digest=90905a2f556bf617f1a9" rel="stylesheet" />
-<link href="_static/styles/pydata-sphinx-theme.css?digest=90905a2f556bf617f1a9" rel="stylesheet" />
+  <link href="_static/styles/pydata-sphinx-theme.css?digest=90905a2f556bf617f1a9" rel="stylesheet" />
 
     <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=8f2a1f02" />
     <link rel="stylesheet" type="text/css" href="_static/tippy.js/tippy.css?v=865cd1a4" />
-    <link rel="stylesheet" type="text/css" href="_static/css/sphinx-theme.css?v=d8118838" />
+    <link rel="stylesheet" type="text/css" href="_static/css/sphinx-theme.css?v=b3903395" />
     <link rel="stylesheet" type="text/css" href="_static/css/tippy.css?v=11e8c0fa" />
   
-  <!-- So that users can add custom icons -->
-  <script defer src="_static/scripts/fontawesome.js?digest=90905a2f556bf617f1a9"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=90905a2f556bf617f1a9" />
-<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=90905a2f556bf617f1a9" />
+  <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=90905a2f556bf617f1a9" />
 
   
     <script src="_static/documentation_options.js?v=7f41d439"></script>
@@ -48,6 +46,8 @@
     <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
     <script src="_static/js/course-focused-mode.js?v=0be05eaa"></script>
     <script src="_static/js/course-sidebar-toggle.js?v=57cfeca2"></script>
+    <script src="_static/js/course-page-toc.js?v=cb59aa39"></script>
+    <script src="_static/js/course-navbar-overflow.js?v=3a1ef034"></script>
     <script src="_static/js/course-search.js?v=724d2f2a"></script>
   <script src="course-search-index.js"></script>
   
@@ -60,12 +60,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
-    <meta name="docbuild:last-update" content="August 22, 2026"/>
+    <meta name="docbuild:last-update" content="August 23, 2026"/>
   
     
     <script src="_static/searchtools.js"></script>
     <script src="_static/language_data.js"></script>
     <script src="searchindex.js"></script>
+  
   
   <script>
     // Prevent a focused cold load from briefly displaying the full shell.
@@ -167,8 +168,8 @@
     <div class="me-auto navbar-header-items__center">
       
         <div class="navbar-item">
-<nav>
-  <ul class="bd-navbar-elements navbar-nav">
+<nav class="course-navbar-nav" aria-label="Primary navigation">
+  <ul class="bd-navbar-elements navbar-nav" data-course-navbar-items>
 <li class="nav-item"><a class="nav-link nav-external" href="https://learn.uark.edu/ultra/courses/_529398_1/outline/">Blackboard</a></li>
 <li class="nav-item"><a class="nav-link nav-internal" href="syllabus.html">Syllabus</a></li>
 <li class="nav-item"><a class="nav-link nav-internal" href="calendar.html">Calendar</a></li>
@@ -177,6 +178,14 @@
 <li class="nav-item"><a class="nav-link nav-internal" href="lecture-notes/index.html">Lecture Notes</a></li>
 </ul>
 
+  <div class="course-navbar-overflow" data-course-navbar-overflow hidden>
+    <button class="course-navbar-overflow__toggle" type="button"
+            aria-expanded="false" aria-haspopup="true" aria-label="Show more navigation items"
+            data-course-navbar-overflow-toggle>
+      <span aria-hidden="true">&#x25BE;</span>
+    </button>
+    <ul class="course-navbar-overflow__menu" data-course-navbar-overflow-menu hidden></ul>
+  </div>
 </nav></div>
       
     </div>
@@ -252,8 +261,8 @@
           
           
             <div class="navbar-item">
-<nav>
-  <ul class="bd-navbar-elements navbar-nav">
+<nav class="course-navbar-nav" aria-label="Primary navigation">
+  <ul class="bd-navbar-elements navbar-nav" data-course-navbar-items>
 <li class="nav-item"><a class="nav-link nav-external" href="https://learn.uark.edu/ultra/courses/_529398_1/outline/">Blackboard</a></li>
 <li class="nav-item"><a class="nav-link nav-internal" href="syllabus.html">Syllabus</a></li>
 <li class="nav-item"><a class="nav-link nav-internal" href="calendar.html">Calendar</a></li>
@@ -262,6 +271,14 @@
 <li class="nav-item"><a class="nav-link nav-internal" href="lecture-notes/index.html">Lecture Notes</a></li>
 </ul>
 
+  <div class="course-navbar-overflow" data-course-navbar-overflow hidden>
+    <button class="course-navbar-overflow__toggle" type="button"
+            aria-expanded="false" aria-haspopup="true" aria-label="Show more navigation items"
+            data-course-navbar-overflow-toggle>
+      <span aria-hidden="true">&#x25BE;</span>
+    </button>
+    <ul class="course-navbar-overflow__menu" data-course-navbar-overflow-menu hidden></ul>
+  </div>
 </nav></div>
           
         
@@ -382,7 +399,7 @@
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
   <script defer src="_static/scripts/bootstrap.js?digest=90905a2f556bf617f1a9"></script>
-<script defer src="_static/scripts/pydata-sphinx-theme.js?digest=90905a2f556bf617f1a9"></script>
+  <script defer src="_static/scripts/pydata-sphinx-theme.js?digest=90905a2f556bf617f1a9"></script>
 
   
 

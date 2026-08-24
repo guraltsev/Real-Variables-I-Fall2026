@@ -22,18 +22,16 @@
   
   <!-- Loaded before other Sphinx assets -->
   <link href="../_static/styles/theme.css?digest=90905a2f556bf617f1a9" rel="stylesheet">
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=90905a2f556bf617f1a9" rel="stylesheet">
+  <link href="../_static/styles/pydata-sphinx-theme.css?digest=90905a2f556bf617f1a9" rel="stylesheet">
 
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02">
     <link rel="stylesheet" type="text/css" href="../_static/tippy.js/tippy.css?v=865cd1a4">
-    <link rel="stylesheet" type="text/css" href="../_static/css/sphinx-theme.css?v=d8118838">
+    <link rel="stylesheet" type="text/css" href="../_static/css/sphinx-theme.css?v=b3903395">
     <link rel="stylesheet" type="text/css" href="../_static/css/tippy.css?v=11e8c0fa">
   
-  <!-- So that users can add custom icons -->
-  <script defer="" src="../_static/scripts/fontawesome.js?digest=90905a2f556bf617f1a9"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=90905a2f556bf617f1a9">
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=90905a2f556bf617f1a9">
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=90905a2f556bf617f1a9">
 
   
     <script src="../_static/documentation_options.js?v=7f41d439"></script>
@@ -41,13 +39,15 @@
     <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
     <script defer="defer" src="../_static/@popperjs/core/popper.min.js?v=a8c9358f"></script>
     <script defer="defer" src="../_static/tippy.js/tippy.umd.min.js?v=4126cd26"></script>
-    <script defer="defer" src="../_static/tippy\assignments\index.675b3bf7-f16c-4a60-9461-3bcd21b9c045.js"></script>
+    <script defer="defer" src="../_static/tippy\assignments\index.bd23c9e2-d548-40ef-a9db-f5ad8fd4b17a.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="../_static/js/math-progressive.js?v=498bffc6"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'assignments/index';</script>
     <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
     <script src="../_static/js/course-focused-mode.js?v=0be05eaa"></script>
     <script src="../_static/js/course-sidebar-toggle.js?v=57cfeca2"></script>
+    <script src="../_static/js/course-page-toc.js?v=cb59aa39"></script>
+    <script src="../_static/js/course-navbar-overflow.js?v=3a1ef034"></script>
     <script src="../_static/js/course-search.js?v=724d2f2a"></script>
   <script src="../course-search-index.js"></script>
   
@@ -56,18 +56,19 @@
     <link rel="icon" href="../_static/uark-favicon.png">
     <link rel="index" title="Index" href="../genindex.html">
     <link rel="search" title="Search" href="../search.html">
-    <link rel="next" title="Resources" href="../resources.html">
+    <link rel="next" title="Homework 01" href="homework01.html">
     <link rel="prev" title="Calendar" href="../calendar.html">
   
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="docsearch:language" content="en">
   <meta name="docsearch:version" content="">
-    <meta name="docbuild:last-update" content="August 22, 2026">
+    <meta name="docbuild:last-update" content="August 23, 2026">
   
     
     <script src="../_static/searchtools.js"></script>
     <script src="../_static/language_data.js"></script>
     <script src="../searchindex.js"></script>
+  
   
   <script>
     // Prevent a focused cold load from briefly displaying the full shell.
@@ -87,7 +88,7 @@
   </script>
 
   </head>
-  <body data-default-mode="" data-course-docname="assignments/index" data-focus-section-root="assignments/index" data-focus-section-title="Assignments" data-focus-section-documents="assignments/index" data-focus-section-targets="{&quot;assignments/index&quot;:&quot;#&quot;}" class="layout-info">
+  <body data-default-mode="" data-course-docname="assignments/index" data-focus-section-root="assignments/index" data-focus-section-title="Assignments" data-focus-section-documents="assignments/index,assignments/homework01" data-focus-section-targets="{&quot;assignments/index&quot;:&quot;#&quot;,&quot;assignments/homework01&quot;:&quot;homework01.html&quot;}" class="layout-info">
 
   
   
@@ -154,8 +155,8 @@
     <div class="me-auto navbar-header-items__center">
       
         <div class="navbar-item">
-<nav>
-  <ul class="bd-navbar-elements navbar-nav current">
+<nav class="course-navbar-nav" aria-label="Primary navigation">
+  <ul class="bd-navbar-elements navbar-nav current" data-course-navbar-items="">
 <li class="nav-item"><a class="nav-link nav-external" href="https://learn.uark.edu/ultra/courses/_529398_1/outline/">Blackboard</a></li>
 <li class="nav-item"><a class="nav-link nav-internal" href="../syllabus.html">Syllabus</a></li>
 <li class="nav-item"><a class="nav-link nav-internal" href="../calendar.html">Calendar</a></li>
@@ -164,6 +165,12 @@
 <li class="nav-item"><a class="nav-link nav-internal" href="../lecture-notes/index.html">Lecture Notes</a></li>
 </ul>
 
+  <div class="course-navbar-overflow" data-course-navbar-overflow="" hidden="">
+    <button class="course-navbar-overflow__toggle" type="button" aria-expanded="false" aria-haspopup="true" aria-label="Show more navigation items" data-course-navbar-overflow-toggle="">
+      <span aria-hidden="true">▾</span>
+    </button>
+    <ul class="course-navbar-overflow__menu" data-course-navbar-overflow-menu="" hidden=""></ul>
+  </div>
 </nav></div>
       
     </div>
@@ -241,8 +248,8 @@
           
           
             <div class="navbar-item">
-<nav>
-  <ul class="bd-navbar-elements navbar-nav current">
+<nav class="course-navbar-nav" aria-label="Primary navigation">
+  <ul class="bd-navbar-elements navbar-nav current" data-course-navbar-items="">
 <li class="nav-item"><a class="nav-link nav-external" href="https://learn.uark.edu/ultra/courses/_529398_1/outline/">Blackboard</a></li>
 <li class="nav-item"><a class="nav-link nav-internal" href="../syllabus.html">Syllabus</a></li>
 <li class="nav-item"><a class="nav-link nav-internal" href="../calendar.html">Calendar</a></li>
@@ -251,6 +258,12 @@
 <li class="nav-item"><a class="nav-link nav-internal" href="../lecture-notes/index.html">Lecture Notes</a></li>
 </ul>
 
+  <div class="course-navbar-overflow" data-course-navbar-overflow="" hidden="">
+    <button class="course-navbar-overflow__toggle" type="button" aria-expanded="false" aria-haspopup="true" aria-label="Show more navigation items" data-course-navbar-overflow-toggle="">
+      <span aria-hidden="true">▾</span>
+    </button>
+    <ul class="course-navbar-overflow__menu" data-course-navbar-overflow-menu="" hidden=""></ul>
+  </div>
 </nav></div>
           
         
@@ -291,7 +304,10 @@
       </button>
     
   </p>
-  <div class="bd-toc-item navbar-nav"></div>
+  <div class="bd-toc-item navbar-nav"><ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="homework01.html">Homework 01</a></li>
+</ul>
+</div>
 </nav></div>
     </div>
   
@@ -348,6 +364,19 @@
 <h2>Weekly written homework<a class="headerlink" href="#weekly-written-homework" title="Link to this heading">#</a></h2>
 <p>I will post written homework here approximately weekly. Submit through Gradescope using the links in <a class="reference external" href="https://learn.uark.edu/ultra/courses/_529398_1/outline/">Blackboard &gt; Assignments &gt; Homework</a>.</p>
 <p>You are encouraged to work in groups of up to three. Make one submission per group and list every group member clearly.</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Assignment</p></th>
+<th class="head"><p>Due</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference internal" href="homework01.html"><span class="doc">Homework 01</span></a></p></td>
+<td><p>2026-08-30 19:00</p></td>
+</tr>
+</tbody>
+</table>
+</div>
 <ul class="simple">
 <li><p>Start each exercise on a new page.</p></li>
 <li><p>Scan or export the complete assignment as a legible PDF.</p></li>
@@ -356,6 +385,8 @@
 </ul>
 <p>I will normally post solutions within one week of the submission deadline.</p>
 <p>Deadlines will appear in your <a class="reference external" href="https://learn.uark.edu/ultra/courses/_529398_1/calendar/">Blackboard Calendar</a>.</p>
+<div class="toctree-wrapper compound">
+</div>
 </section>
 <section id="online-questions">
 <h2>Online questions<a class="headerlink" href="#online-questions" title="Link to this heading">#</a></h2>
@@ -386,10 +417,10 @@ They can be accessed through <a class="reference external" href="https://learn.u
         <p class="prev-next-title">Calendar</p>
       </div>
     </a>
-    <a class="right-next" href="../resources.html" title="next page">
+    <a class="right-next" href="homework01.html" title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Resources</p>
+        <p class="prev-next-title">Homework 01</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -432,8 +463,21 @@ They can be accessed through <a class="reference external" href="https://learn.u
 
 
   <div class="sidebar-secondary-item">
-<div id="pst-page-navigation-heading-2" class="page-toc tocsection onthispage">
-    <i class="fa-solid fa-list"></i> On this page
+<div class="course-page-toc-heading">
+    <div class="dropdown course-page-toc-display-menu">
+      <button id="course-page-toc-display-toggle" class="btn btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" title="Choose on-this-page navigation display">
+        <i class="fa-solid fa-list" aria-hidden="true"></i>
+        <span class="visually-hidden">Choose on-this-page navigation display</span>
+      </button>
+      <ul class="dropdown-menu" aria-labelledby="course-page-toc-display-toggle">
+        <li><button class="dropdown-item" type="button" data-course-page-toc-mode="expanded">Show all sections</button></li>
+        <li><button class="dropdown-item" type="button" data-course-page-toc-mode="current">Show current section</button></li>
+        <li><button class="dropdown-item" type="button" data-course-page-toc-mode="top-level">Show top-level sections</button></li>
+      </ul>
+    </div>
+    <div id="pst-page-navigation-heading-2" class="page-toc tocsection onthispage">
+      On this page
+    </div>
   </div>
   <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="pst-show_toc_level nav section-nav flex-column">
@@ -483,7 +527,7 @@ They can be accessed through <a class="reference external" href="https://learn.u
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
   <script defer="" src="../_static/scripts/bootstrap.js?digest=90905a2f556bf617f1a9"></script>
-<script defer="" src="../_static/scripts/pydata-sphinx-theme.js?digest=90905a2f556bf617f1a9"></script>
+  <script defer="" src="../_static/scripts/pydata-sphinx-theme.js?digest=90905a2f556bf617f1a9"></script>
 
   
 

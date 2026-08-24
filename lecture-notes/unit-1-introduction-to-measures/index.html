@@ -22,18 +22,16 @@
   
   <!-- Loaded before other Sphinx assets -->
   <link href="../../_static/styles/theme.css?digest=90905a2f556bf617f1a9" rel="stylesheet">
-<link href="../../_static/styles/pydata-sphinx-theme.css?digest=90905a2f556bf617f1a9" rel="stylesheet">
+  <link href="../../_static/styles/pydata-sphinx-theme.css?digest=90905a2f556bf617f1a9" rel="stylesheet">
 
     <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=8f2a1f02">
     <link rel="stylesheet" type="text/css" href="../../_static/tippy.js/tippy.css?v=865cd1a4">
-    <link rel="stylesheet" type="text/css" href="../../_static/css/sphinx-theme.css?v=d8118838">
+    <link rel="stylesheet" type="text/css" href="../../_static/css/sphinx-theme.css?v=b3903395">
     <link rel="stylesheet" type="text/css" href="../../_static/css/tippy.css?v=11e8c0fa">
   
-  <!-- So that users can add custom icons -->
-  <script defer="" src="../../_static/scripts/fontawesome.js?digest=90905a2f556bf617f1a9"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=90905a2f556bf617f1a9">
-<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=90905a2f556bf617f1a9">
+  <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=90905a2f556bf617f1a9">
 
   
     <script src="../../_static/documentation_options.js?v=7f41d439"></script>
@@ -41,11 +39,13 @@
     <script src="../../_static/sphinx_highlight.js?v=6ffebe34"></script>
     <script defer="defer" src="../../_static/@popperjs/core/popper.min.js?v=a8c9358f"></script>
     <script defer="defer" src="../../_static/tippy.js/tippy.umd.min.js?v=4126cd26"></script>
-    <script defer="defer" src="../../_static/tippy\lecture-notes\unit-1-introduction-to-measures\index.eee6d4d6-6edb-4511-bc33-2086103f3aaa.js"></script>
+    <script defer="defer" src="../../_static/tippy\lecture-notes\unit-1-introduction-to-measures\index.567ea754-fd36-4b0f-b61c-48321344292e.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'lecture-notes/unit-1-introduction-to-measures/index';</script>
     <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
     <script src="../../_static/js/course-focused-mode.js?v=0be05eaa"></script>
     <script src="../../_static/js/course-sidebar-toggle.js?v=57cfeca2"></script>
+    <script src="../../_static/js/course-page-toc.js?v=cb59aa39"></script>
+    <script src="../../_static/js/course-navbar-overflow.js?v=3a1ef034"></script>
     <script src="../../_static/js/course-search.js?v=724d2f2a"></script>
   <script src="../../course-search-index.js"></script>
   
@@ -60,12 +60,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="docsearch:language" content="en">
   <meta name="docsearch:version" content="">
-    <meta name="docbuild:last-update" content="August 22, 2026">
+    <meta name="docbuild:last-update" content="August 23, 2026">
   
     
     <script src="../../_static/searchtools.js"></script>
     <script src="../../_static/language_data.js"></script>
     <script src="../../searchindex.js"></script>
+  
   
   <script>
     // Prevent a focused cold load from briefly displaying the full shell.
@@ -85,7 +86,7 @@
   </script>
 
   </head>
-  <body data-default-mode="" data-course-docname="lecture-notes/unit-1-introduction-to-measures/index" data-focus-section-root="lecture-notes/index" data-focus-section-title="Lecture Notes" data-focus-section-documents="lecture-notes/index,lecture-notes/unit-1-introduction-to-measures/index,lecture-notes/unit-1-introduction-to-measures/01-review-of-riemann-integration,lecture-notes/unit-1-introduction-to-measures/02-Cardinality-countability-and-non-negative-sums" data-focus-section-targets="{&quot;lecture-notes/index&quot;:&quot;../index.html&quot;,&quot;lecture-notes/unit-1-introduction-to-measures/index&quot;:&quot;#&quot;,&quot;lecture-notes/unit-1-introduction-to-measures/01-review-of-riemann-integration&quot;:&quot;01-review-of-riemann-integration.html&quot;,&quot;lecture-notes/unit-1-introduction-to-measures/02-Cardinality-countability-and-non-negative-sums&quot;:&quot;02-Cardinality-countability-and-non-negative-sums.html&quot;}" class="layout-notes">
+  <body data-default-mode="" data-course-docname="lecture-notes/unit-1-introduction-to-measures/index" data-focus-section-root="lecture-notes/index" data-focus-section-title="Lecture Notes" data-focus-section-documents="lecture-notes/index,lecture-notes/unit-1-introduction-to-measures/index,lecture-notes/unit-1-introduction-to-measures/01-review-of-riemann-integration,lecture-notes/unit-1-introduction-to-measures/02-Cardinality-countability-and-non-negative-sums,lecture-notes/unit-1-introduction-to-measures/03-outer-measures" data-focus-section-targets="{&quot;lecture-notes/index&quot;:&quot;../index.html&quot;,&quot;lecture-notes/unit-1-introduction-to-measures/index&quot;:&quot;#&quot;,&quot;lecture-notes/unit-1-introduction-to-measures/01-review-of-riemann-integration&quot;:&quot;01-review-of-riemann-integration.html&quot;,&quot;lecture-notes/unit-1-introduction-to-measures/02-Cardinality-countability-and-non-negative-sums&quot;:&quot;02-Cardinality-countability-and-non-negative-sums.html&quot;,&quot;lecture-notes/unit-1-introduction-to-measures/03-outer-measures&quot;:&quot;03-outer-measures.html&quot;}" class="layout-notes">
 
   
   
@@ -152,8 +153,8 @@
     <div class="me-auto navbar-header-items__center">
       
         <div class="navbar-item">
-<nav>
-  <ul class="bd-navbar-elements navbar-nav current">
+<nav class="course-navbar-nav" aria-label="Primary navigation">
+  <ul class="bd-navbar-elements navbar-nav current" data-course-navbar-items="">
 <li class="nav-item"><a class="nav-link nav-external" href="https://learn.uark.edu/ultra/courses/_529398_1/outline/">Blackboard</a></li>
 <li class="nav-item"><a class="nav-link nav-internal" href="../../syllabus.html">Syllabus</a></li>
 <li class="nav-item"><a class="nav-link nav-internal" href="../../calendar.html">Calendar</a></li>
@@ -162,6 +163,12 @@
 <li class="nav-item current"><a class="nav-link nav-internal" href="../index.html">Lecture Notes</a></li>
 </ul>
 
+  <div class="course-navbar-overflow" data-course-navbar-overflow="" hidden="">
+    <button class="course-navbar-overflow__toggle" type="button" aria-expanded="false" aria-haspopup="true" aria-label="Show more navigation items" data-course-navbar-overflow-toggle="">
+      <span aria-hidden="true">▾</span>
+    </button>
+    <ul class="course-navbar-overflow__menu" data-course-navbar-overflow-menu="" hidden=""></ul>
+  </div>
 </nav></div>
       
     </div>
@@ -235,8 +242,8 @@
           
           
             <div class="navbar-item">
-<nav>
-  <ul class="bd-navbar-elements navbar-nav current">
+<nav class="course-navbar-nav" aria-label="Primary navigation">
+  <ul class="bd-navbar-elements navbar-nav current" data-course-navbar-items="">
 <li class="nav-item"><a class="nav-link nav-external" href="https://learn.uark.edu/ultra/courses/_529398_1/outline/">Blackboard</a></li>
 <li class="nav-item"><a class="nav-link nav-internal" href="../../syllabus.html">Syllabus</a></li>
 <li class="nav-item"><a class="nav-link nav-internal" href="../../calendar.html">Calendar</a></li>
@@ -245,6 +252,12 @@
 <li class="nav-item current"><a class="nav-link nav-internal" href="../index.html">Lecture Notes</a></li>
 </ul>
 
+  <div class="course-navbar-overflow" data-course-navbar-overflow="" hidden="">
+    <button class="course-navbar-overflow__toggle" type="button" aria-expanded="false" aria-haspopup="true" aria-label="Show more navigation items" data-course-navbar-overflow-toggle="">
+      <span aria-hidden="true">▾</span>
+    </button>
+    <ul class="course-navbar-overflow__menu" data-course-navbar-overflow-menu="" hidden=""></ul>
+  </div>
 </nav></div>
           
         
@@ -289,6 +302,7 @@
 <li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">I. Introduction to measures</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="01-review-of-riemann-integration.html">1. Review of Riemann Integration</a></li>
 <li class="toctree-l2"><a class="reference internal" href="02-Cardinality-countability-and-non-negative-sums.html">2. Cardinality, countability, and non-negative sums</a></li>
+<li class="toctree-l2"><a class="reference internal" href="03-outer-measures.html">3. Outer Measures</a></li>
 </ul>
 </details></li>
 </ul>
@@ -421,7 +435,7 @@
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
   <script defer="" src="../../_static/scripts/bootstrap.js?digest=90905a2f556bf617f1a9"></script>
-<script defer="" src="../../_static/scripts/pydata-sphinx-theme.js?digest=90905a2f556bf617f1a9"></script>
+  <script defer="" src="../../_static/scripts/pydata-sphinx-theme.js?digest=90905a2f556bf617f1a9"></script>
 
   
 
