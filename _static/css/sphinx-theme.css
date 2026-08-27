@@ -157,6 +157,31 @@ html[data-theme="dark"] :focus-visible {
   outline-color: var(--brand-tan);
 }
 
+/* Edit-preview navigation calls out author-only material without making it
+   resemble a warning or a public course section. */
+.course-edit-only-entry {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.18rem 0.48rem !important;
+  color: var(--brand-navy) !important;
+  background: color-mix(in srgb, var(--brand-sky) 32%, var(--pst-color-on-background)) !important;
+  border: 1px solid color-mix(in srgb, var(--brand-blue) 42%, var(--pst-color-border)) !important;
+  border-radius: 0.3rem;
+  font-weight: 600;
+}
+
+.course-edit-only-entry:hover,
+.course-edit-only-entry:focus-visible {
+  color: var(--brand-navy) !important;
+  background: color-mix(in srgb, var(--brand-sky) 50%, var(--pst-color-on-background)) !important;
+}
+
+html[data-theme="dark"] .course-edit-only-entry {
+  color: var(--brand-sky) !important;
+  background: color-mix(in srgb, var(--brand-navy) 65%, var(--pst-color-surface)) !important;
+  border-color: color-mix(in srgb, var(--brand-blue) 60%, var(--pst-color-border)) !important;
+}
+
 /* Keep the desktop header to one row.  JavaScript moves only the links that
    do not fit into this disclosure menu, preserving Search and other header
    controls in their intended row. */
@@ -425,6 +450,13 @@ body.layout-notes .bd-article-container {
   margin-top: 0.85rem;
 }
 
+/* Descriptive checkpoints make long proofs easier to scan. */
+.bd-article .semantic-proof-step {
+  font-weight: 650;
+  margin-bottom: 0.35rem;
+  margin-top: 1rem;
+}
+
 /* Homework problem names are secondary to their numbered markers. */
 .homework-problem-name {
   font-size: 0.9em;
@@ -466,6 +498,7 @@ body.layout-notes .bd-article-container {
 .semantic-underline { text-decoration: underline; }
 .semantic-strikethrough { text-decoration: line-through; }
 .semantic-boxed { border: 1px solid currentColor; border-radius: 0.15rem; padding: 0 0.2em; }
+.semantic-center { text-align: center; }
 .semantic-colored.semantic-color-black { color: black; }
 .semantic-colored.semantic-color-blue { color: blue; }
 .semantic-colored.semantic-color-brown { color: brown; }
@@ -1302,6 +1335,82 @@ section[id^="homework-problem-"][id*="-part-"] > h3 + p {
   font-weight: 700;
 }
 
+/* Model write-ups should resemble the scale and informality of handwritten
+   student work while remaining selectable, searchable, and accessible text. */
+.semantic-studentwork {
+  font-family: "Segoe Print", "Comic Sans MS", "Bradley Hand", cursive;
+  font-size: 1.08rem;
+  line-height: 1.65;
+  margin: 0.75rem 0 1.25rem;
+  padding: 1rem 1.1rem;
+  background: color-mix(in srgb, var(--pst-color-surface) 94%, var(--brand-sky));
+  border: 1px solid color-mix(in srgb, var(--pst-color-border) 65%, var(--brand-blue));
+  border-radius: 0.25rem;
+}
+
+.semantic-studentwork > :first-child {
+  margin-top: 0;
+}
+
+.semantic-studentwork > :last-child {
+  margin-bottom: 0;
+}
+
+.online-question-title {
+  font-weight: 700;
+}
+
+/* Collapsed instructor-facing exports from MyOpenMath. */
+.my-open-math {
+  margin: 1rem 0;
+}
+
+.my-open-math__controls {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+}
+
+.my-open-math__details {
+  min-width: 0;
+  flex: 1;
+  border: 1px solid var(--pst-color-border, var(--brand-silver));
+  border-radius: 0.25rem;
+  background: var(--pst-color-surface, var(--brand-light));
+}
+
+.my-open-math__details > summary {
+  padding: 0.55rem 0.75rem;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.my-open-math__contents {
+  padding: 0.75rem;
+}
+
+.my-open-math__section + .my-open-math__section {
+  margin-top: 1rem;
+}
+
+.my-open-math__section > h3 {
+  margin: 0 0 0.35rem;
+  font-size: 1rem;
+}
+
+.my-open-math__section pre {
+  flex: 1;
+  min-width: 0;
+  max-height: 32rem;
+  margin: 0;
+  overflow: auto;
+}
+
+.my-open-math__copy {
+  flex: 0 0 auto;
+  margin-top: 0.1rem;
+}
+
 .lecture-log-tentative {
   display: inline-block;
   margin-left: 0.35rem;
@@ -1336,6 +1445,11 @@ html[data-theme="dark"] .lecture-log-tentative {
 html[data-theme="dark"] .lecture-log-inclass {
   color: #d9f5fb;
   background: #24596a;
+}
+
+/* LaTeX's \item[(A)] syntax requests parenthesized alphabetic list markers. */
+ol.parenthesized-upperalpha > li::marker {
+  content: "(" counter(list-item, upper-alpha) ") ";
 }
 
 .grade-weights-chart { display: grid; grid-template-columns: minmax(11rem, 16rem) minmax(15rem, 1fr); gap: 1.25rem; align-items: center; max-width: 46rem; margin: 1.25rem auto; }
