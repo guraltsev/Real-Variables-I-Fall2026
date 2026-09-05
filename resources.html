@@ -25,9 +25,8 @@
   <link href="_static/styles/pydata-sphinx-theme.css?digest=90905a2f556bf617f1a9" rel="stylesheet">
 
     <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=8f2a1f02">
-    <link rel="stylesheet" type="text/css" href="_static/tippy.js/tippy.css?v=865cd1a4">
-    <link rel="stylesheet" type="text/css" href="_static/css/sphinx-theme.css?v=b36af13d">
-    <link rel="stylesheet" type="text/css" href="_static/css/tippy.css?v=234a49ec">
+    <link rel="stylesheet" type="text/css" href="_static/css/sphinx-theme.css?v=63849e35">
+    <link rel="stylesheet" type="text/css" href="_static/css/course-reference-preview.css?v=dfd52601">
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=90905a2f556bf617f1a9">
@@ -37,9 +36,6 @@
     <script src="_static/documentation_options.js?v=7f41d439"></script>
     <script src="_static/doctools.js?v=fd6eb6e6"></script>
     <script src="_static/sphinx_highlight.js?v=6ffebe34"></script>
-    <script defer="defer" src="_static/@popperjs/core/popper.min.js?v=a8c9358f"></script>
-    <script defer="defer" src="_static/tippy.js/tippy.umd.min.js?v=4126cd26"></script>
-    <script defer="defer" src="_static/tippy\resources.4f7bd5ac-727f-4ae5-99ad-72042f95efe3.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'resources';</script>
     <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
     <script src="_static/js/course-focused-mode.js?v=0be05eaa"></script>
@@ -48,6 +44,10 @@
     <script src="_static/js/course-navbar-overflow.js?v=3a1ef034"></script>
     <script src="_static/js/course-search.js?v=d094b4b4"></script>
     <script src="_static/js/my-open-math.js?v=f599d90e"></script>
+    <script src="_static/@floating-ui/core/floating-ui.core.umd.min.js?v=4c6fc893"></script>
+    <script src="_static/@floating-ui/dom/floating-ui.dom.umd.min.js?v=b4f165e2"></script>
+    <script src="_static/js/course-reference-preview-core.js?v=56ac7479"></script>
+    <script src="_static/js/course-reference-preview.js?v=c43e9279"></script>
   <script src="course-search-index.js"></script>
   
   
@@ -61,7 +61,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="docsearch:language" content="en">
   <meta name="docsearch:version" content="">
-    <meta name="docbuild:last-update" content="August 30, 2026">
+    <meta name="docbuild:last-update" content="September 05, 2026">
   
     
     <script src="_static/searchtools.js"></script>
@@ -207,10 +207,25 @@
       
     
   
+    
+      
+      
+    
+  
+    
+      
+      
+    
+  
+    
+      
+      
+    
+  
   <ul class="bd-navbar-elements navbar-nav current" data-course-navbar-items="">
 <li class="nav-item"><a class="nav-link nav-external" href="https://learn.uark.edu/ultra/courses/_529398_1/outline/">Blackboard</a></li>
 <li class="nav-item"><a class="nav-link nav-internal" href="syllabus.html">Syllabus</a></li>
-<li class="nav-item"><a class="nav-link nav-internal" href="calendar.html">Calendar</a></li>
+<li class="nav-item"><a class="nav-link nav-internal" href="calendar/index.html">Calendar</a></li>
 <li class="nav-item"><a class="nav-link nav-internal" href="assignments/index.html">Assignments</a></li>
 <li class="nav-item current"><a class="current nav-link nav-internal" href="#">Resources</a></li>
 <li class="nav-item"><a class="nav-link nav-internal" href="lecture-notes/index.html">Lecture Notes</a></li>
@@ -352,10 +367,25 @@
       
     
   
+    
+      
+      
+    
+  
+    
+      
+      
+    
+  
+    
+      
+      
+    
+  
   <ul class="bd-navbar-elements navbar-nav current" data-course-navbar-items="">
 <li class="nav-item"><a class="nav-link nav-external" href="https://learn.uark.edu/ultra/courses/_529398_1/outline/">Blackboard</a></li>
 <li class="nav-item"><a class="nav-link nav-internal" href="syllabus.html">Syllabus</a></li>
-<li class="nav-item"><a class="nav-link nav-internal" href="calendar.html">Calendar</a></li>
+<li class="nav-item"><a class="nav-link nav-internal" href="calendar/index.html">Calendar</a></li>
 <li class="nav-item"><a class="nav-link nav-internal" href="assignments/index.html">Assignments</a></li>
 <li class="nav-item current"><a class="current nav-link nav-internal" href="#">Resources</a></li>
 <li class="nav-item"><a class="nav-link nav-internal" href="lecture-notes/index.html">Lecture Notes</a></li>
@@ -459,6 +489,21 @@
         
         
       
+    
+      
+        
+        
+      
+    
+      
+        
+        
+      
+    
+      
+        
+        
+      
     </div>
 </nav></div>
     </div>
@@ -500,7 +545,7 @@
     <li class="breadcrumb-item active" aria-current="page">
       <span class="ellipsis">Resources</span>
       
-      <a class="course-breadcrumb-pdf-link" href="_static/pdfs/resources.pdf" aria-label="Download PDF version of this page">
+      <a class="course-breadcrumb-pdf-link" href="_pdf/resources.pdf" aria-label="Download PDF version of this page">
         <img class="course-breadcrumb-pdf-icon" src="_static/assets/pdf-icon.svg" alt="">
       </a>
       
@@ -543,7 +588,7 @@
 <h2>Freely available notes and texts<a class="headerlink" href="#freely-available-notes-and-texts" title="Link to this heading">#</a></h2>
 <p>The following materials are available online and are also represented in the course <code class="docutils literal notranslate"><span class="pre">books/</span></code> archive. They are optional supplementary reading, not required purchases.</p>
 <ul class="simple">
-<li><p>Jeff Viaclovsky, <em>18.125 Measure and Integration</em> (MIT OpenCourseWare, Fall 2003). A 24-part set of lecture notes. <a class="reference external" href="https://ocw.mit.edu/courses/18-125-measure-and-integration-fall-2003/download/">Online lecture notes</a>.</p></li>
+<li><p>Jeff Viaclovsky, <em>18.125 Measure and Integration</em><span class="semantic-space"> </span>(MIT OpenCourseWare, Fall 2003). A 24-part set of lecture notes. <a class="reference external" href="https://ocw.mit.edu/courses/18-125-measure-and-integration-fall-2003/download/">Online lecture notes</a>.</p></li>
 <li><p>Brian S. Thomson, Judith B. Bruckner, and Andrew M. Bruckner, <em>Real Analysis</em>, 2nd ed., 2008. <a class="reference external" href="https://www.classicalrealanalysis.info/documents/BBT-AlllChapters-Landscape.pdf">Free PDF</a>.</p></li>
 <li><p>Steve Cheng, <em>A Crash Course on the Lebesgue Integral and Measure Theory</em>. <a class="reference external" href="https://github.gold-saucer.org/LebesgueIntegration/lebesgue.pdf">Online PDF</a>.</p></li>
 <li><p>D. H. Fremlin, <em>Measure Theory</em>, Volumes 1–5. The first two volumes are especially suitable as introductory references. <a class="reference external" href="https://www1.essex.ac.uk/maths/people/fremlin/mtcont.htm">Online contents and PDFs</a>.</p></li>

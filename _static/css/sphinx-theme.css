@@ -603,6 +603,35 @@ html.course-secondary-in-menu body.layout-info .bd-main .bd-content .bd-article-
 .semantic-colorboxed.semantic-color-yellow { background-color: yellow; }
 
 /* Remarks distinguish explanatory context from numbered results. */
+.admonition.admonition-lecture-log,
+div.admonition.admonition-lecture-log { background-color: #f9fafb; border-color: #9ca3af; }
+.admonition.admonition-lecture-log > .admonition-title,
+div.admonition.admonition-lecture-log > .admonition-title { background-color: #f3f4f6; color: #374151; }
+/* A reusable variant for titled panels which intentionally have no icon.
+   PyData reserves 2rem at the left of every admonition title for its default
+   bell, so reset that padding as well as both icon pseudo-elements. */
+.admonition.admonition-no-icon > .admonition-title,
+div.admonition.admonition-no-icon > .admonition-title {
+  padding-left: 0.6rem;
+}
+
+/* The base theme also indents prose following every admonition title.  For
+   no-icon panels, keep the content aligned with the title and box gutter. */
+.admonition.admonition-no-icon > .admonition-title ~ p,
+div.admonition.admonition-no-icon > .admonition-title ~ p {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.admonition.admonition-no-icon > .admonition-title::before,
+div.admonition.admonition-no-icon > .admonition-title::before,
+.admonition.admonition-no-icon > .admonition-title::after,
+div.admonition.admonition-no-icon > .admonition-title::after {
+  background: none !important;
+  content: none !important;
+  display: none !important;
+}
+
 .admonition.admonition-remark,
 div.admonition.admonition-remark { background-color: #f8fafc; border-color: #64748b; }
 .admonition.admonition-remark > .admonition-title,
@@ -1179,6 +1208,12 @@ div.math {
   cursor: text;
 }
 
+/* Sphinx can omit a whitespace-only text node immediately after inline math
+   in list items.  Preserve the visual inter-word gap at the math boundary. */
+.semantic-inline-math {
+  margin-right: 0.25em;
+}
+
 .math-fallback:focus {
   outline: 2px solid var(--pst-color-accent);
   outline-offset: 0.2rem;
@@ -1487,6 +1522,26 @@ section[id^="homework-problem-"][id*="-part-"] > h3 + p {
   text-transform: uppercase;
 }
 
+.lecture-status {
+  display: inline-block;
+  margin: 0.35rem 0 0.65rem;
+  padding: 0.12rem 0.5rem;
+  border-radius: 999px;
+  font-size: 0.78em;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  line-height: 1.25;
+  text-transform: uppercase;
+}
+
+.lecture-status-published { color: #166534; background: #dcfce7; }
+.lecture-status-tentative { color: var(--brand-brown); background: var(--brand-tan); }
+.lecture-status-draft { color: #374151; background: #e5e7eb; }
+
+html[data-theme="dark"] .lecture-status-published { color: #bbf7d0; background: #166534; }
+html[data-theme="dark"] .lecture-status-tentative { color: var(--brand-navy); background: var(--brand-sky); }
+html[data-theme="dark"] .lecture-status-draft { color: #f3f4f6; background: #4b5563; }
+
 html[data-theme="dark"] .lecture-log-tentative {
   color: var(--brand-navy);
   background: var(--brand-sky);
@@ -1514,6 +1569,10 @@ html[data-theme="dark"] .lecture-log-inclass {
 ol.parenthesized-upperalpha > li::marker {
   content: "(" counter(list-item, upper-alpha) ") ";
 }
+
+/* LaTeX's \item[label] syntax is represented inside the list item so the
+   label remains available to screen readers and can contain inline math. */
+.latex-item-label { font-weight: 700; }
 
 .grade-weights-chart { display: grid; grid-template-columns: minmax(11rem, 16rem) minmax(15rem, 1fr); gap: 1.25rem; align-items: center; max-width: 46rem; margin: 1.25rem auto; }
 .grade-weights-chart svg { width: 100%; max-width: 16rem; margin: auto; }

@@ -25,9 +25,8 @@
   <link href="../_static/styles/pydata-sphinx-theme.css?digest=90905a2f556bf617f1a9" rel="stylesheet">
 
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02">
-    <link rel="stylesheet" type="text/css" href="../_static/tippy.js/tippy.css?v=865cd1a4">
-    <link rel="stylesheet" type="text/css" href="../_static/css/sphinx-theme.css?v=b36af13d">
-    <link rel="stylesheet" type="text/css" href="../_static/css/tippy.css?v=234a49ec">
+    <link rel="stylesheet" type="text/css" href="../_static/css/sphinx-theme.css?v=63849e35">
+    <link rel="stylesheet" type="text/css" href="../_static/css/course-reference-preview.css?v=dfd52601">
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=90905a2f556bf617f1a9">
@@ -37,11 +36,8 @@
     <script src="../_static/documentation_options.js?v=7f41d439"></script>
     <script src="../_static/doctools.js?v=fd6eb6e6"></script>
     <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
-    <script defer="defer" src="../_static/@popperjs/core/popper.min.js?v=a8c9358f"></script>
-    <script defer="defer" src="../_static/tippy.js/tippy.umd.min.js?v=4126cd26"></script>
-    <script defer="defer" src="../_static/tippy\lecture-notes\index.492638c1-f6c0-4508-9114-54f86fbfe2e5.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-    <script defer="defer" src="../_static/js/math-progressive.js?v=fe14ef58"></script>
+    <script defer="defer" src="../_static/js/math-progressive.js?v=b9a6853d"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'lecture-notes/index';</script>
     <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
     <script src="../_static/js/course-focused-mode.js?v=0be05eaa"></script>
@@ -50,6 +46,10 @@
     <script src="../_static/js/course-navbar-overflow.js?v=3a1ef034"></script>
     <script src="../_static/js/course-search.js?v=d094b4b4"></script>
     <script src="../_static/js/my-open-math.js?v=f599d90e"></script>
+    <script src="../_static/@floating-ui/core/floating-ui.core.umd.min.js?v=4c6fc893"></script>
+    <script src="../_static/@floating-ui/dom/floating-ui.dom.umd.min.js?v=b4f165e2"></script>
+    <script src="../_static/js/course-reference-preview-core.js?v=56ac7479"></script>
+    <script src="../_static/js/course-reference-preview.js?v=c43e9279"></script>
   <script src="../course-search-index.js"></script>
   
   
@@ -63,7 +63,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="docsearch:language" content="en">
   <meta name="docsearch:version" content="">
-    <meta name="docbuild:last-update" content="August 30, 2026">
+    <meta name="docbuild:last-update" content="September 05, 2026">
   
     
     <script src="../_static/searchtools.js"></script>
@@ -89,7 +89,7 @@
   </script>
 
   </head>
-  <body data-default-mode="" data-course-docname="lecture-notes/index" data-focus-section-root="lecture-notes/index" data-focus-section-title="Lecture Notes" data-focus-section-documents="lecture-notes/index,lecture-notes/unit-1-introduction-to-measures/index,lecture-notes/unit-1-introduction-to-measures/01-review-of-riemann-integration,lecture-notes/unit-1-introduction-to-measures/02-Cardinality-countability-and-non-negative-sums,lecture-notes/unit-1-introduction-to-measures/03-outer-measures,lecture-notes/unit-2-sigma-algebras-and-measures/index,lecture-notes/unit-2-sigma-algebras-and-measures/10-12-sigma-algebras-measures-and-their-properties" data-focus-section-targets="{&quot;lecture-notes/index&quot;:&quot;#&quot;,&quot;lecture-notes/unit-1-introduction-to-measures/index&quot;:&quot;unit-1-introduction-to-measures/index.html&quot;,&quot;lecture-notes/unit-1-introduction-to-measures/01-review-of-riemann-integration&quot;:&quot;unit-1-introduction-to-measures/01-review-of-riemann-integration.html&quot;,&quot;lecture-notes/unit-1-introduction-to-measures/02-Cardinality-countability-and-non-negative-sums&quot;:&quot;unit-1-introduction-to-measures/02-Cardinality-countability-and-non-negative-sums.html&quot;,&quot;lecture-notes/unit-1-introduction-to-measures/03-outer-measures&quot;:&quot;unit-1-introduction-to-measures/03-outer-measures.html&quot;,&quot;lecture-notes/unit-2-sigma-algebras-and-measures/index&quot;:&quot;unit-2-sigma-algebras-and-measures/index.html&quot;,&quot;lecture-notes/unit-2-sigma-algebras-and-measures/10-12-sigma-algebras-measures-and-their-properties&quot;:&quot;unit-2-sigma-algebras-and-measures/10-12-sigma-algebras-measures-and-their-properties.html&quot;}" class="layout-notes">
+  <body data-default-mode="" data-course-docname="lecture-notes/index" data-focus-section-root="lecture-notes/index" data-focus-section-title="Lecture Notes" data-focus-section-documents="lecture-notes/index,lecture-notes/unit-1-introduction-to-measures/index,lecture-notes/unit-1-introduction-to-measures/01-review-of-riemann-integration,lecture-notes/unit-1-introduction-to-measures/02-Cardinality-countability-and-non-negative-sums,lecture-notes/unit-1-introduction-to-measures/03-outer-measures,lecture-notes/unit-2-sigma-algebras-and-measures/index,lecture-notes/unit-2-sigma-algebras-and-measures/01-sigma-algebras-measures-and-their-properties" data-focus-section-targets="{&quot;lecture-notes/index&quot;:&quot;#&quot;,&quot;lecture-notes/unit-1-introduction-to-measures/index&quot;:&quot;unit-1-introduction-to-measures/index.html&quot;,&quot;lecture-notes/unit-1-introduction-to-measures/01-review-of-riemann-integration&quot;:&quot;unit-1-introduction-to-measures/01-review-of-riemann-integration.html&quot;,&quot;lecture-notes/unit-1-introduction-to-measures/02-Cardinality-countability-and-non-negative-sums&quot;:&quot;unit-1-introduction-to-measures/02-Cardinality-countability-and-non-negative-sums.html&quot;,&quot;lecture-notes/unit-1-introduction-to-measures/03-outer-measures&quot;:&quot;unit-1-introduction-to-measures/03-outer-measures.html&quot;,&quot;lecture-notes/unit-2-sigma-algebras-and-measures/index&quot;:&quot;unit-2-sigma-algebras-and-measures/index.html&quot;,&quot;lecture-notes/unit-2-sigma-algebras-and-measures/01-sigma-algebras-measures-and-their-properties&quot;:&quot;unit-2-sigma-algebras-and-measures/01-sigma-algebras-measures-and-their-properties.html&quot;}" class="layout-notes">
 
   
   
@@ -209,10 +209,25 @@
       
     
   
+    
+      
+      
+    
+  
+    
+      
+      
+    
+  
+    
+      
+      
+    
+  
   <ul class="bd-navbar-elements navbar-nav current" data-course-navbar-items="">
 <li class="nav-item"><a class="nav-link nav-external" href="https://learn.uark.edu/ultra/courses/_529398_1/outline/">Blackboard</a></li>
 <li class="nav-item"><a class="nav-link nav-internal" href="../syllabus.html">Syllabus</a></li>
-<li class="nav-item"><a class="nav-link nav-internal" href="../calendar.html">Calendar</a></li>
+<li class="nav-item"><a class="nav-link nav-internal" href="../calendar/index.html">Calendar</a></li>
 <li class="nav-item"><a class="nav-link nav-internal" href="../assignments/index.html">Assignments</a></li>
 <li class="nav-item"><a class="nav-link nav-internal" href="../resources.html">Resources</a></li>
 <li class="nav-item current"><a class="current nav-link nav-internal" href="#">Lecture Notes</a></li>
@@ -354,10 +369,25 @@
       
     
   
+    
+      
+      
+    
+  
+    
+      
+      
+    
+  
+    
+      
+      
+    
+  
   <ul class="bd-navbar-elements navbar-nav current" data-course-navbar-items="">
 <li class="nav-item"><a class="nav-link nav-external" href="https://learn.uark.edu/ultra/courses/_529398_1/outline/">Blackboard</a></li>
 <li class="nav-item"><a class="nav-link nav-internal" href="../syllabus.html">Syllabus</a></li>
-<li class="nav-item"><a class="nav-link nav-internal" href="../calendar.html">Calendar</a></li>
+<li class="nav-item"><a class="nav-link nav-internal" href="../calendar/index.html">Calendar</a></li>
 <li class="nav-item"><a class="nav-link nav-internal" href="../assignments/index.html">Assignments</a></li>
 <li class="nav-item"><a class="nav-link nav-internal" href="../resources.html">Resources</a></li>
 <li class="nav-item current"><a class="current nav-link nav-internal" href="#">Lecture Notes</a></li>
@@ -461,6 +491,21 @@
         
         
       
+    
+      
+        
+        
+      
+    
+      
+        
+        
+      
+    
+      
+        
+        
+      
     <ul class="nav bd-sidenav">
 <li class="toctree-l1 has-children"><a class="reference internal" href="unit-1-introduction-to-measures/index.html">I. Introduction to measures</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="unit-1-introduction-to-measures/01-review-of-riemann-integration.html">1. Review of Riemann Integration</a></li>
@@ -469,7 +514,7 @@
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="unit-2-sigma-algebras-and-measures/index.html">II. Sigma-algebras and measures</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="unit-2-sigma-algebras-and-measures/10-12-sigma-algebras-measures-and-their-properties.html">4. <span class="math notranslate nohighlight math-fallback" data-math-prerendered="" data-tex="\sigma" data-math-display="inline" data-math-speech="sigma" role="math" aria-label="Math: sigma. Original TeX: \sigma"><mjx-container class="MathJax math-svg" jax="SVG" overflow="overflow" aria-hidden="true" focusable="false"><svg style="vertical-align: -0.025ex;" xmlns="http://www.w3.org/2000/svg" width="1.292ex" height="1ex" role="img" focusable="false" viewBox="0 -431 571 442" xmlns:xlink="http://www.w3.org/1999/xlink"><defs><path id="MJX-1-NCM-I-1D70E" d="M525 431L300 431C252 431 207 416 166 385C102 336 38 250 38 148C38 58 100-11 190-11C257-11 317 18 368 76C417 132 441 194 441 263C441 304 432 338 414 366L515 366C550 366 567 378 567 403C567 426 550 431 525 431M107 121C107 180 121 234 150 282C184 338 228 366 283 366C341 366 370 336 370 275C370 250 365 221 355 187C335 116 302 66 256 39C233 25 211 18 191 18C136 18 107 63 107 121Z"></path></defs><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mi"><use data-c="1D70E" xlink:href="#MJX-1-NCM-I-1D70E"></use></g></g></g></svg></mjx-container></span>-algebras, measures, and their properties</a></li>
+<li class="toctree-l2"><a class="reference internal" href="unit-2-sigma-algebras-and-measures/01-sigma-algebras-measures-and-their-properties.html">4. <span class="math notranslate nohighlight math-fallback" data-math-prerendered="" data-tex="\sigma" data-math-display="inline" data-math-speech="sigma" role="math" aria-label="Math: sigma. Original TeX: \sigma"><mjx-container class="MathJax math-svg" jax="SVG" overflow="overflow" aria-hidden="true" focusable="false"><svg style="vertical-align: -0.025ex;" xmlns="http://www.w3.org/2000/svg" width="1.292ex" height="1ex" role="img" focusable="false" viewBox="0 -431 571 442" xmlns:xlink="http://www.w3.org/1999/xlink"><defs><path id="MJX-1-NCM-I-1D70E" d="M525 431L300 431C252 431 207 416 166 385C102 336 38 250 38 148C38 58 100-11 190-11C257-11 317 18 368 76C417 132 441 194 441 263C441 304 432 338 414 366L515 366C550 366 567 378 567 403C567 426 550 431 525 431M107 121C107 180 121 234 150 282C184 338 228 366 283 366C341 366 370 336 370 275C370 250 365 221 355 187C335 116 302 66 256 39C233 25 211 18 191 18C136 18 107 63 107 121Z"></path></defs><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mi"><use data-c="1D70E" xlink:href="#MJX-1-NCM-I-1D70E"></use></g></g></g></svg></mjx-container></span>-algebras, measures, and their properties</a></li>
 </ul>
 </details></li>
 </ul>
@@ -514,7 +559,7 @@
     <li class="breadcrumb-item active" aria-current="page">
       <span class="ellipsis">Lecture Notes</span>
       
-      <a class="course-breadcrumb-pdf-link" href="../_static/pdfs/lecture-notes__index.pdf" aria-label="Download PDF version of this page">
+      <a class="course-breadcrumb-pdf-link" href="_pdf/index.pdf" aria-label="Download PDF version of this page">
         <img class="course-breadcrumb-pdf-icon" src="../_static/assets/pdf-icon.svg" alt="">
       </a>
       
@@ -540,7 +585,7 @@
 <h1>Lecture Notes<a class="headerlink" href="#lecture-notes" title="Link to this heading">#</a></h1>
 <div class="toctree-wrapper compound">
 </div>
-<p>Lecture notes will be added here as the semester progresses. Until a note is published, use the reading listed in the <a class="reference internal" href="../calendar.html"><span class="doc">daily lecture log</span></a>.</p>
+<p>Lecture notes will be added here as the semester progresses. Until a note is published, use the reading listed in the <a class="reference internal" href="../calendar/index.html"><span>daily lecture log</span></a>.</p>
 <section id="planned-unit-map">
 <h2>Planned unit map<a class="headerlink" href="#planned-unit-map" title="Link to this heading">#</a></h2>
 <p><span class="lecture-log-tentative">Tentative</span></p>
