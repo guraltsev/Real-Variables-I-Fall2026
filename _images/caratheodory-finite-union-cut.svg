@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="560" viewBox="0 0 960 560" role="img" aria-labelledby="title description">
+  <title id="title">The two cuts used to prove closure under finite unions</title>
+  <desc id="description">Inside the universe X, a horizontal line divides A above from A complement below, and a vertical line divides B on the left from B complement on the right. A circle E centred on the two lines is divided into four labelled portions: E intersection A intersection B, E intersection A intersection B complement, E intersection A complement intersection B, and E intersection A complement intersection B complement.</desc>
+  <defs>
+    <clipPath id="e-clip"><circle cx="480" cy="280" r="154"/></clipPath>
+  </defs>
+
+  <rect x="70" y="60" width="820" height="430" rx="26" fill="#ffffff" stroke="#26384a" stroke-width="4"/>
+  <path d="M72 62H888V280H72Z" fill="#3785df" fill-opacity="0.18"/>
+  <path d="M72 280H888V488H72Z" fill="#df4b4b" fill-opacity="0.16"/>
+  <path d="M72 62H480V488H72Z" fill="#75ae75" fill-opacity="0.09"/>
+  <path d="M480 62H888V488H480Z" fill="#e9c34b" fill-opacity="0.09"/>
+
+  <g clip-path="url(#e-clip)">
+    <rect x="326" y="126" width="154" height="154" fill="#5fb6a6" fill-opacity="0.72"/>
+    <rect x="480" y="126" width="154" height="154" fill="#6ca8dc" fill-opacity="0.72"/>
+    <rect x="326" y="280" width="154" height="154" fill="#d69b69" fill-opacity="0.72"/>
+    <rect x="480" y="280" width="154" height="154" fill="#c98aa2" fill-opacity="0.72"/>
+  </g>
+
+  <line x1="70" y1="280" x2="890" y2="280" stroke="#26384a" stroke-width="4"/>
+  <line x1="480" y1="60" x2="480" y2="490" stroke="#26384a" stroke-width="4"/>
+  <circle cx="480" cy="280" r="154" fill="none" stroke="#6b4c00" stroke-width="6"/>
+
+  <g font-family="Arial, Helvetica, sans-serif" fill="#172435" font-weight="700" text-anchor="middle">
+    <text x="103" y="99" font-size="30" font-style="italic">X</text>
+    <text x="700" y="117" font-size="34" fill="#14599e">A</text>
+    <text x="700" y="454" font-size="34" fill="#a82c2c">A<tspan baseline-shift="super" font-size="22">c</tspan></text>
+    <text x="166" y="250" font-size="34" fill="#39783b">B</text>
+    <text x="794" y="250" font-size="34" fill="#9b7300">B<tspan baseline-shift="super" font-size="22">c</tspan></text>
+    <text x="480" y="105" font-size="34" font-style="italic" fill="#6b4c00">E</text>
+  </g>
+
+  <g font-family="Arial, Helvetica, sans-serif" fill="#172435" text-anchor="middle" font-size="20" font-weight="700">
+    <text x="403" y="238">E ∩ A ∩ B</text>
+    <text x="557" y="238">E ∩ A ∩ B<tspan baseline-shift="super" font-size="14">c</tspan></text>
+    <text x="403" y="328">E ∩ A<tspan baseline-shift="super" font-size="14">c</tspan> ∩ B</text>
+    <text x="557" y="328">E ∩ A<tspan baseline-shift="super" font-size="14">c</tspan> ∩ B<tspan baseline-shift="super" font-size="14">c</tspan></text>
+  </g>
+</svg>

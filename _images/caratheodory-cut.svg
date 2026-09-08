@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="500" viewBox="0 0 960 500" role="img" aria-labelledby="title description">
+  <title id="title">A set E cut into its portions in A and A complement inside the universe X</title>
+  <desc id="description">Inside one large rounded rectangle labelled X, a blue rounded rectangle A leaves space around it in red A complement. A yellow irregular set E crosses the boundary of A. Its colors blend to green in E intersection A and orange in E intersection A complement.</desc>
+  <defs>
+    <path id="set-e" d="M150 236 C170 170 290 130 390 142 C475 82 637 108 733 155 C817 196 838 262 792 303 C730 358 620 360 539 345 C452 400 290 380 202 331 C143 298 130 266 150 236Z"/>
+    <rect id="set-a" x="155" y="120" width="300" height="245" rx="42"/>
+    <clipPath id="set-e-clip">
+      <use href="#set-e"/>
+    </clipPath>
+  </defs>
+
+  <rect x="56" y="46" width="848" height="374" rx="28" fill="#ffffff"/>
+  <rect x="56" y="46" width="848" height="374" rx="28" fill="#df4b4b" fill-opacity="0.22" stroke="#26384a" stroke-width="4"/>
+  <use href="#set-a" fill="#ffffff"/>
+  <use href="#set-a" fill="#3785df" fill-opacity="0.22"/>
+  <g clip-path="url(#set-e-clip)">
+    <use href="#set-e" fill="#e97d2e"/>
+    <rect x="155" y="120" width="300" height="245" rx="42" fill="#879d49"/>
+  </g>
+  <use href="#set-a" fill="none" stroke="#2768ad" stroke-width="7" stroke-linejoin="round"/>
+  <use href="#set-e" fill="none" stroke="#9c7600" stroke-width="6" stroke-linejoin="round"/>
+
+  <g font-family="Arial, Helvetica, sans-serif" fill="#172435" text-anchor="middle">
+    <text x="92" y="86" font-size="30" font-style="italic" font-weight="700">X</text>
+    <text x="205" y="160" font-size="35" font-weight="700" fill="#14599e">A</text>
+    <text x="755" y="102" font-size="35" font-weight="700" fill="#a82c2c">A<tspan baseline-shift="super" font-size="23">c</tspan></text>
+    <text x="575" y="97" font-size="37" font-style="italic" font-weight="700" fill="#8b6800">E</text>
+    <text x="306" y="300" font-size="27" font-style="italic" fill="#244a25">E ∩ A</text>
+    <text x="656" y="300" font-size="27" font-style="italic" fill="#703718">E ∩ A<tspan baseline-shift="super" font-size="18">c</tspan></text>
+  </g>
+</svg>

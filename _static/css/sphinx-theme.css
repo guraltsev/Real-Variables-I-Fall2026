@@ -1172,6 +1172,47 @@ html[data-theme="dark"] div.admonition.admonition-proof > .admonition-title::aft
   color: var(--pst-color-primary-text);
 }
 
+/* After a reader scrolls this navigation manually, offer a compact way back
+   to the scroll-spy-selected section without obscuring the list itself. */
+.course-page-toc-follow-current {
+  position: fixed;
+  right: 0.8rem;
+  bottom: 0.9rem;
+  z-index: 4;
+  display: inline-grid;
+  width: 2.25rem;
+  height: 2.25rem;
+  padding: 0.45rem;
+  border: 1px solid var(--pst-color-border);
+  border-radius: 999px;
+  color: var(--pst-color-text-base);
+  background: var(--pst-color-background);
+  box-shadow: 0 0.2rem 0.6rem rgb(0 0 0 / 0.16);
+  font-size: var(--pst-sidebar-font-size);
+  opacity: 0.72;
+}
+
+.course-page-toc-follow-current-icon {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+html[data-theme="dark"] .course-page-toc-follow-current-icon {
+  filter: invert(1);
+}
+
+.course-page-toc-follow-current:hover,
+.course-page-toc-follow-current:focus-visible {
+  color: var(--pst-color-link);
+  opacity: 1;
+}
+
+.bd-container__inner.course-secondary-collapsed .course-page-toc-follow-current {
+  display: none;
+}
+
 #pst-page-toc-nav[data-course-page-toc-mode="expanded"] ul ul {
   display: block;
 }
