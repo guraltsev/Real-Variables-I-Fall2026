@@ -140,6 +140,17 @@ html[data-theme="dark"].course-focused .course-focus-button {
 }
 html[data-theme="dark"] .course-focus-icon { filter: invert(79%) sepia(28%) saturate(500%); }
 
+/* On a narrow screen, PyData copies the header's course-wide navigation into
+   the opened primary sidebar.  The section sidebar immediately below it has
+   the same active-section heading, producing two consecutive "Calendar"
+   entries.  Keep the section's child links, but omit that redundant heading.
+   Desktop keeps the heading because its copied header navigation is hidden. */
+@media (max-width: 959.98px) {
+  #pst-primary-sidebar .sidebar-header-items + .sidebar-primary-items__start .bd-links__title {
+    display: none;
+  }
+}
+
 html.course-focus-requested .bd-container__inner > .bd-sidebar-primary,
 html.course-focus-requested .bd-container__inner > .bd-sidebar-secondary,
 html.course-focus-requested .course-edge-sidebar-toggle,
@@ -1249,10 +1260,11 @@ div.math {
   cursor: text;
 }
 
-/* Sphinx can omit a whitespace-only text node immediately after inline math
-   in list items.  Preserve the visual inter-word gap at the math boundary. */
-.semantic-inline-math {
-  margin-right: 0.25em;
+/* Punctuation belongs to the preceding inline formula.  The wrapper prevents
+   a browser line break between the formula and its comma, period, or similar
+   mark without making the surrounding sentence unbreakable. */
+.semantic-inline-math-with-punctuation {
+  white-space: nowrap;
 }
 
 .math-fallback:focus {
