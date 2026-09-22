@@ -2,7 +2,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Lecture Notes — REAL VARIABLES I - Fall 2026</title>
+    <title>Lecture notes — REAL VARIABLES I - Fall 2026</title>
   
   
   
@@ -26,7 +26,7 @@
 
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02">
     <link rel="stylesheet" type="text/css" href="../_static/css/exam-booklet.css?v=33169b37">
-    <link rel="stylesheet" type="text/css" href="../_static/css/sphinx-theme.css?v=b7ecb34b">
+    <link rel="stylesheet" type="text/css" href="../_static/css/sphinx-theme.css?v=35d33106">
     <link rel="stylesheet" type="text/css" href="../_static/css/course-reference-preview.css?v=dfd52601">
   
   <!-- Pre-loaded scripts that we'll load fully later -->
@@ -64,14 +64,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="docsearch:language" content="en">
   <meta name="docsearch:version" content="">
-    <meta name="docbuild:last-update" content="September 21, 2026">
+    <meta name="docbuild:last-update" content="September 22, 2026">
   
     
     <script src="../_static/searchtools.js"></script>
     <script src="../_static/language_data.js"></script>
     <script src="../searchindex.js"></script>
   
-  <style>:root { --course-display-math-size: 80%; }</style>
   
   <script>
     // Prevent a focused cold load from briefly displaying the full shell.
@@ -91,7 +90,7 @@
   </script>
 
   </head>
-  <body data-default-mode="" data-course-docname="lecture-notes/index" data-focus-section-root="lecture-notes/index" data-focus-section-title="Lecture Notes" data-focus-section-documents="lecture-notes/index,lecture-notes/unit-1-introduction-to-measures/index,lecture-notes/unit-1-introduction-to-measures/01-review-of-riemann-integration,lecture-notes/unit-1-introduction-to-measures/02-Cardinality-countability-and-non-negative-sums,lecture-notes/unit-1-introduction-to-measures/03-outer-measures,lecture-notes/unit-2-sigma-algebras-and-measures/index,lecture-notes/unit-2-sigma-algebras-and-measures/01-sigma-algebras-measures-and-their-properties,lecture-notes/unit-2-sigma-algebras-and-measures/02-caratheodory-measurability-and-coincidence-criterion-for-measures,lecture-notes/unit-3-measurable-functions-and-the-lebesgue-integral/index,lecture-notes/unit-3-measurable-functions-and-the-lebesgue-integral/17-18-measurable-functions-and-operations" data-focus-section-targets="{&quot;lecture-notes/index&quot;:&quot;#&quot;,&quot;lecture-notes/unit-1-introduction-to-measures/index&quot;:&quot;unit-1-introduction-to-measures/index.html&quot;,&quot;lecture-notes/unit-1-introduction-to-measures/01-review-of-riemann-integration&quot;:&quot;unit-1-introduction-to-measures/01-review-of-riemann-integration.html&quot;,&quot;lecture-notes/unit-1-introduction-to-measures/02-Cardinality-countability-and-non-negative-sums&quot;:&quot;unit-1-introduction-to-measures/02-Cardinality-countability-and-non-negative-sums.html&quot;,&quot;lecture-notes/unit-1-introduction-to-measures/03-outer-measures&quot;:&quot;unit-1-introduction-to-measures/03-outer-measures.html&quot;,&quot;lecture-notes/unit-2-sigma-algebras-and-measures/index&quot;:&quot;unit-2-sigma-algebras-and-measures/index.html&quot;,&quot;lecture-notes/unit-2-sigma-algebras-and-measures/01-sigma-algebras-measures-and-their-properties&quot;:&quot;unit-2-sigma-algebras-and-measures/01-sigma-algebras-measures-and-their-properties.html&quot;,&quot;lecture-notes/unit-2-sigma-algebras-and-measures/02-caratheodory-measurability-and-coincidence-criterion-for-measures&quot;:&quot;unit-2-sigma-algebras-and-measures/02-caratheodory-measurability-and-coincidence-criterion-for-measures.html&quot;,&quot;lecture-notes/unit-3-measurable-functions-and-the-lebesgue-integral/index&quot;:&quot;unit-3-measurable-functions-and-the-lebesgue-integral/index.html&quot;,&quot;lecture-notes/unit-3-measurable-functions-and-the-lebesgue-integral/17-18-measurable-functions-and-operations&quot;:&quot;unit-3-measurable-functions-and-the-lebesgue-integral/17-18-measurable-functions-and-operations.html&quot;}" class="layout-notes">
+  <body data-default-mode="" data-course-docname="lecture-notes/index" data-focus-section-root="lecture-notes/index" data-focus-section-title="Lecture notes" data-focus-section-documents="lecture-notes/index,lecture-notes/unit-1-introduction-to-measures/index,lecture-notes/unit-1-introduction-to-measures/01-review-of-riemann-integration,lecture-notes/unit-1-introduction-to-measures/02-Cardinality-countability-and-non-negative-sums,lecture-notes/unit-1-introduction-to-measures/03-outer-measures,lecture-notes/unit-2-sigma-algebras-and-measures/index,lecture-notes/unit-2-sigma-algebras-and-measures/01-sigma-algebras-measures-and-their-properties,lecture-notes/unit-2-sigma-algebras-and-measures/02-caratheodory-measurability-and-coincidence-criterion-for-measures,lecture-notes/unit-3-measurable-functions-and-the-lebesgue-integral/index,lecture-notes/unit-3-measurable-functions-and-the-lebesgue-integral/17-18-measurable-functions-and-operations,lecture-notes/unit-3-measurable-functions-and-the-lebesgue-integral/19-20-the-lebesgue-integral-and-its-basic-properties" data-focus-section-targets="{&quot;lecture-notes/index&quot;:&quot;#&quot;,&quot;lecture-notes/unit-1-introduction-to-measures/index&quot;:&quot;unit-1-introduction-to-measures/index.html&quot;,&quot;lecture-notes/unit-1-introduction-to-measures/01-review-of-riemann-integration&quot;:&quot;unit-1-introduction-to-measures/01-review-of-riemann-integration.html&quot;,&quot;lecture-notes/unit-1-introduction-to-measures/02-Cardinality-countability-and-non-negative-sums&quot;:&quot;unit-1-introduction-to-measures/02-Cardinality-countability-and-non-negative-sums.html&quot;,&quot;lecture-notes/unit-1-introduction-to-measures/03-outer-measures&quot;:&quot;unit-1-introduction-to-measures/03-outer-measures.html&quot;,&quot;lecture-notes/unit-2-sigma-algebras-and-measures/index&quot;:&quot;unit-2-sigma-algebras-and-measures/index.html&quot;,&quot;lecture-notes/unit-2-sigma-algebras-and-measures/01-sigma-algebras-measures-and-their-properties&quot;:&quot;unit-2-sigma-algebras-and-measures/01-sigma-algebras-measures-and-their-properties.html&quot;,&quot;lecture-notes/unit-2-sigma-algebras-and-measures/02-caratheodory-measurability-and-coincidence-criterion-for-measures&quot;:&quot;unit-2-sigma-algebras-and-measures/02-caratheodory-measurability-and-coincidence-criterion-for-measures.html&quot;,&quot;lecture-notes/unit-3-measurable-functions-and-the-lebesgue-integral/index&quot;:&quot;unit-3-measurable-functions-and-the-lebesgue-integral/index.html&quot;,&quot;lecture-notes/unit-3-measurable-functions-and-the-lebesgue-integral/17-18-measurable-functions-and-operations&quot;:&quot;unit-3-measurable-functions-and-the-lebesgue-integral/17-18-measurable-functions-and-operations.html&quot;,&quot;lecture-notes/unit-3-measurable-functions-and-the-lebesgue-integral/19-20-the-lebesgue-integral-and-its-basic-properties&quot;:&quot;unit-3-measurable-functions-and-the-lebesgue-integral/19-20-the-lebesgue-integral-and-its-basic-properties.html&quot;}" class="layout-notes">
 
   
   
@@ -161,10 +160,6 @@
 <nav class="course-navbar-nav" aria-label="Primary navigation">
   
   
-    
-    
-    
-  
   
     
       
@@ -226,13 +221,13 @@
       
     
   
-  <ul class="bd-navbar-elements navbar-nav current" data-course-navbar-items=""><li class="nav-item"><a class="nav-link nav-external" href="https://learn.uark.edu/ultra/courses/_529398_1/outline/">Blackboard</a></li>
+  <ul class="bd-navbar-elements navbar-nav current" data-course-navbar-items="">
 <li class="nav-item"><a class="nav-link nav-external" href="https://learn.uark.edu/ultra/courses/_529398_1/outline/">Blackboard</a></li>
 <li class="nav-item"><a class="nav-link nav-internal" href="../syllabus.html">Syllabus</a></li>
 <li class="nav-item"><a class="nav-link nav-internal" href="../calendar/index.html">Calendar</a></li>
 <li class="nav-item"><a class="nav-link nav-internal" href="../assignments/index.html">Assignments</a></li>
 <li class="nav-item"><a class="nav-link nav-internal" href="../resources.html">Resources</a></li>
-<li class="nav-item current"><a class="current nav-link nav-internal" href="#">Lecture Notes</a></li>
+<li class="nav-item current"><a class="current nav-link nav-internal" href="#">Lecture notes</a></li>
 </ul>
 
   <div class="course-navbar-overflow" data-course-navbar-overflow="" hidden="">
@@ -321,10 +316,6 @@
 <nav class="course-navbar-nav" aria-label="Primary navigation">
   
   
-    
-    
-    
-  
   
     
       
@@ -386,13 +377,13 @@
       
     
   
-  <ul class="bd-navbar-elements navbar-nav current" data-course-navbar-items=""><li class="nav-item"><a class="nav-link nav-external" href="https://learn.uark.edu/ultra/courses/_529398_1/outline/">Blackboard</a></li>
+  <ul class="bd-navbar-elements navbar-nav current" data-course-navbar-items="">
 <li class="nav-item"><a class="nav-link nav-external" href="https://learn.uark.edu/ultra/courses/_529398_1/outline/">Blackboard</a></li>
 <li class="nav-item"><a class="nav-link nav-internal" href="../syllabus.html">Syllabus</a></li>
 <li class="nav-item"><a class="nav-link nav-internal" href="../calendar/index.html">Calendar</a></li>
 <li class="nav-item"><a class="nav-link nav-internal" href="../assignments/index.html">Assignments</a></li>
 <li class="nav-item"><a class="nav-link nav-internal" href="../resources.html">Resources</a></li>
-<li class="nav-item current"><a class="current nav-link nav-internal" href="#">Lecture Notes</a></li>
+<li class="nav-item current"><a class="current nav-link nav-internal" href="#">Lecture notes</a></li>
 </ul>
 
   <div class="course-navbar-overflow" data-course-navbar-overflow="" hidden="">
@@ -432,9 +423,9 @@
     <div class="sidebar-primary-items__start sidebar-primary__section">
         <div class="sidebar-primary-item">
 
-<nav class="bd-docs-nav bd-links" aria-label="Lecture Notes">
+<nav class="bd-docs-nav bd-links" aria-label="Lecture notes">
   <p class="bd-links__title" role="heading" aria-level="1">
-    <a class="reference internal" href="#">Lecture Notes</a>
+    <a class="reference internal" href="#">Lecture notes</a>
     
       <button type="button" class="course-focus-button" data-course-focus-toggle="" aria-label="Focus this section" data-bs-original-title="Focus this section" data-bs-toggle="tooltip" data-bs-placement="bottom">
         <span class="course-focus-icon" aria-hidden="true"></span>
@@ -505,18 +496,19 @@
       
     <ul class="nav bd-sidenav">
 <li class="toctree-l1 has-children"><a class="reference internal" href="unit-1-introduction-to-measures/index.html">I. Introduction to measures</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="unit-1-introduction-to-measures/01-review-of-riemann-integration.html">1. Review of Riemann Integration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="unit-1-introduction-to-measures/01-review-of-riemann-integration.html">1. Review of Riemann integration</a></li>
 <li class="toctree-l2"><a class="reference internal" href="unit-1-introduction-to-measures/02-Cardinality-countability-and-non-negative-sums.html">2. Cardinality, countability, and non-negative sums</a></li>
-<li class="toctree-l2"><a class="reference internal" href="unit-1-introduction-to-measures/03-outer-measures.html">3. Outer Measures</a></li>
+<li class="toctree-l2"><a class="reference internal" href="unit-1-introduction-to-measures/03-outer-measures.html">3. Outer measures</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="unit-2-sigma-algebras-and-measures/index.html">II. Sigma-algebras and measures</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="unit-2-sigma-algebras-and-measures/01-sigma-algebras-measures-and-their-properties.html">4. <span class="semantic-inline-math-with-punctuation"><span class="semantic-inline-math math notranslate nohighlight math-fallback" data-math-prerendered="" data-tex="\sigma" data-math-display="inline" data-math-speech="sigma" role="math" aria-label="Math: sigma. Original TeX: \sigma"><mjx-container class="MathJax math-svg" jax="SVG" overflow="overflow" aria-hidden="true" focusable="false"><svg style="vertical-align: -0.025ex;" xmlns="http://www.w3.org/2000/svg" width="1.292ex" height="1ex" role="img" focusable="false" viewBox="0 -431 571 442" xmlns:xlink="http://www.w3.org/1999/xlink"><defs><path id="MJX-1-NCM-I-1D70E" d="M525 431L300 431C252 431 207 416 166 385C102 336 38 250 38 148C38 58 100-11 190-11C257-11 317 18 368 76C417 132 441 194 441 263C441 304 432 338 414 366L515 366C550 366 567 378 567 403C567 426 550 431 525 431M107 121C107 180 121 234 150 282C184 338 228 366 283 366C341 366 370 336 370 275C370 250 365 221 355 187C335 116 302 66 256 39C233 25 211 18 191 18C136 18 107 63 107 121Z"></path></defs><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mi"><use data-c="1D70E" xlink:href="#MJX-1-NCM-I-1D70E"></use></g></g></g></svg></mjx-container></span>-</span>algebras, measures, and their properties</a></li>
-<li class="toctree-l2"><a class="reference internal" href="unit-2-sigma-algebras-and-measures/02-caratheodory-measurability-and-coincidence-criterion-for-measures.html">5. Carathéodory Measurability and the coincidence criterion for measures</a></li>
+<li class="toctree-l2"><a class="reference internal" href="unit-2-sigma-algebras-and-measures/02-caratheodory-measurability-and-coincidence-criterion-for-measures.html">5. Carathéodory measurability and the coincidence criterion for measures</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="unit-3-measurable-functions-and-the-lebesgue-integral/index.html">III. Measurable functions and the Lebesgue integral</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="unit-3-measurable-functions-and-the-lebesgue-integral/17-18-measurable-functions-and-operations.html">6. Measurable functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="unit-3-measurable-functions-and-the-lebesgue-integral/19-20-the-lebesgue-integral-and-its-basic-properties.html">7. The Lebesgue integral of non-negative functions</a></li>
 </ul>
 </details></li>
 </ul>
@@ -559,7 +551,7 @@
     </li>
     
     <li class="breadcrumb-item active" aria-current="page">
-      <span class="ellipsis">Lecture Notes</span>
+      <span class="ellipsis">Lecture notes</span>
       
       <a class="course-breadcrumb-pdf-link" href="_pdf/index.pdf" aria-label="Download PDF version of this page">
         <img class="course-breadcrumb-pdf-icon" src="../_static/assets/pdf-icon.svg" alt="">
@@ -584,7 +576,7 @@
                 <article class="bd-article">
                   
   <section id="lecture-notes">
-<h1>Lecture Notes<a class="headerlink" href="#lecture-notes" title="Link to this heading">#</a></h1>
+<h1>Lecture notes<a class="headerlink" href="#lecture-notes" title="Link to this heading">#</a></h1>
 <div class="toctree-wrapper compound">
 </div>
 <p>Lecture notes will be added here as the semester progresses. Until a note is published, use the reading listed in the <a class="reference internal" href="../calendar/index.html"><span>daily lecture log</span></a>.</p>

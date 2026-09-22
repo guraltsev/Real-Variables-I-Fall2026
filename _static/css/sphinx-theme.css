@@ -551,7 +551,6 @@ html.course-secondary-in-menu body.layout-info .bd-main .bd-content .bd-article-
 .math-fallback[data-math-display="block"],
 .math-enhanced[data-math-display="block"] {
   display: block;
-  font-size: var(--course-display-math-size, 80%);
   margin: 0;
   padding: 0;
 }
