@@ -1574,6 +1574,35 @@ section[id^="homework-problem-"][id*="-part-"] > h3 + p {
   font-weight: 700;
 }
 
+/* Homework solution parts: Minimal solution, Solution, Discussion. */
+.semantic-hwsolution {
+  margin: 1rem 0;
+  padding: 0.25rem 0 0.25rem 1rem;
+  border-left: 3px solid var(--pst-color-border);
+}
+
+.semantic-hwsolution > :nth-child(2) {
+  margin-top: 0;
+}
+
+.semantic-hwsolution > :last-child {
+  margin-bottom: 0;
+}
+
+.hwsolution-title {
+  font-weight: 700;
+  margin: 0 0 0.35rem;
+}
+
+.semantic-hw-min-solution {
+  border-left-color: var(--brand-blue);
+}
+
+.semantic-hw-discussion {
+  border-left-style: dashed;
+  color: var(--pst-color-text-muted);
+}
+
 /* Model write-ups should resemble the scale and informality of handwritten
    student work while remaining selectable, searchable, and accessible text. */
 .semantic-studentwork {
